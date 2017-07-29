@@ -2,7 +2,6 @@ CREATE TABLE IF NOT EXISTS child (
 aadhar_id INTEGER(12) NOT NULL ,
 hospital_name VARCHAR(60) NOT NULL ,
 case_no VARCHAR(10)NOT NULL ,
-gender CHAR NOT NULL ,
 mother_tongue VARCHAR(30)  ,
 education VARCHAR(20) ,
 fathers_name VARCHAR(60) ,
