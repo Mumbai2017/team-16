@@ -92,10 +92,13 @@ PRIMARY KEY (id_child_volunteer)
 /*referral done*/
 
 CREATE TABLE wish(
- wishid INTEGER(10) NOT NULL,
+ wishid INTEGER(10) NOT NULL AUTO_INCREMENT,
  wish_1 TEXT NOT NULL,
  wish_2 TEXT ,
  wish_3 TEXT ,
+ wish_1_type VARCHAR(10),
+ wish_2_type VARCHAR(10),
+ wish_3_type VARCHAR(10),
  aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  wish_detail text NOT NULL,
  priority INTEGER(1) NOT NULL,

@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+	$conn = connect();
 	$data = json_decode('logindata');
 	$aadhar_id = $data['aadhar_id'];
     $password = $data['password'];
