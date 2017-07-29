@@ -101,7 +101,6 @@ CREATE TABLE wish(
  wish_3_type VARCHAR(10),
  aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  wish_detail text NOT NULL,
- priority INTEGER(1) NOT NULL,
  approved CHAR NOT NULL,
  approved_by VARCHAR(50) NOT NULL,
  proposed_date DATE NOT NULL,
