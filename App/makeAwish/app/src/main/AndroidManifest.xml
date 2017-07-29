@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
         <activity android:name=".UploadAMemory">
@@ -41,6 +41,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="good.force.teah.makeawish.homescreen" />
         </activity>
+        <activity
+            android:name=".addReferral"
+            android:label="@string/title_activity_add_referral"
+            android:parentActivityName=".homescreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="good.force.teah.makeawish.homescreen" />
+        </activity>
+        <activity android:name=".viewReferral" />
+        <activity android:name=".calender"></activity>
     </application>
 
 </manifest>
