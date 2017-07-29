@@ -20,6 +20,7 @@ import static good.force.teah.makeawish.R.styleable.View;
 public class homescreen extends AppCompatActivity {
 
     ImageButton viewProfile, viewReferrals , addReferrals, faq, calender;
+    EditText hey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
