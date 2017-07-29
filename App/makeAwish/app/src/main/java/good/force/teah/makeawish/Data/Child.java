@@ -5,4 +5,5 @@ package good.force.teah.makeawish.Data;
  */
 
 public class Child {
+    
 }

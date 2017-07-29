@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConsentForm" />
-        <activity android:name=".ReferralForm"></activity>
+        <activity android:name=".ReferralForm" />
+        <activity android:name=".WishGrantingForm"></activity>
     </application>
 
 </manifest>
