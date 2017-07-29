@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+	$conn = connect();
 	$data = json_decode('referalform');
 	$aadhar_id = (int)$data['aadhar'];
 	$hospital_name = $data['hospital'];
@@ -23,7 +24,7 @@ include 'connect.php';
 	'$guardian','$siblings','$illness','$parent_consent','$consent_by','$witness','$photo_url')";
 	$response = @mysqli_query($conn, $query);
 	if($response)
-	    echo 'status:Success';
+	    echo '{"Status":"Inserted"}';
 	else
 		echo mysqli_error($conn);
 }
