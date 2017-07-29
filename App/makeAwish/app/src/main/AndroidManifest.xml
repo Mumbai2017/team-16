@@ -11,12 +11,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".ConsentForm" />
+        <activity android:name=".ReferralForm" />
+        <activity android:name=".UploadAMemory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
         <activity android:name=".WishGrantingForm" />
@@ -30,6 +36,8 @@
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
         <activity android:name=".Registration"></activity>
+=======
+>>>>>>> 1201ef89133d1534b473bedbbb5637f98b5d8b6c
     </application>
 
 </manifest>

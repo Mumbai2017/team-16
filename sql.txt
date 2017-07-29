@@ -100,3 +100,17 @@ CREATE TABLE "address_directory" (
 "temporary" TEXT NOT NULL ,
 PRIMARY KEY ("aadhar_id")
 );
+
+
+CREATE TABLE `wish` (
+ `wishid` int(10) NOT NULL,
+ `aadhar_id_child` int(12) NOT NULL,
+ `wish_detail` text NOT NULL,
+ `priority` int(1) NOT NULL,
+ `approved` char(2) NOT NULL,
+ `approved_by` varchar(50) NOT NULL,
+ `proposed_date` date NOT NULL,
+ `approved_date` date NOT NULL,
+ `fulfillmentdate` date NOT NULL,
+ `fulfieldby` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
