@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="good.force.teah.makeawish.Registration">
+    tools:context="good.force.teah.makeawish.Registration"
+    android:layout_margin="30sp"
+    >
 
 
         <EditText
@@ -13,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="Aadhar No" />
         <EditText
             android:id="@+id/password"
@@ -70,7 +72,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/contactNo"/>
 <Button
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/register"
     android:text="Register"/>

@@ -15,11 +15,7 @@
         </activity>
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             </activity>
         <activity android:name=".UploadAMemory">
 
@@ -36,7 +32,11 @@
 
         </activity>
         <activity android:name=".Registration">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

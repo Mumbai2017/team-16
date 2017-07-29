@@ -8,10 +8,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.Date;
-
+import android.util.Log;
+import org.json.JSONException;
+import  org.json.JSONObject;
 public class Registration extends AppCompatActivity {
 
     private EditText aadhar, password;
@@ -24,7 +27,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-aadhar=(EditText) findViewById(R.id.aadhar);
+        aadhar=(EditText) findViewById(R.id.aadhar);
         password=(EditText) findViewById(R.id.password);
         register=(Button) findViewById(R.id.register);
 
@@ -36,11 +39,43 @@ aadhar=(EditText) findViewById(R.id.aadhar);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(aadhar.getText().toString().length()==0 || password.getText().toString().length()==0 )
+                {
+                    Toast.makeText(getApplicationContext(),"Please enter all details",Toast.LENGTH_LONG).show();
 
+                }
+                else
+                {
+                    JSONObject obj = new JSONObject();
+                   try
+                   {
+                       obj.put("aadharNo",aadhar.getText().toString());
+                       obj.put("password",password.getText().toString());
+                       if(doctor.isChecked())
+                           obj.put("doctor","y");
+                       else
+                           obj.put("doctor","n");
+                       if(vol.isChecked())
+                           obj.put("volunteer","y");
+                       else
+                           obj.put("volunteer","n");
+                       if(donor.isChecked())
+                           obj.put("donor","y");
+                       else
+                           obj.put("donor","n");
+                       Log.d("json",obj.toString());
+                   }
+                   catch(JSONException e)
+                   {
+
+                       e.printStackTrace();
+                   }
+
+                }
             }
         });
 
-       
+
 
 
 
