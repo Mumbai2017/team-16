@@ -1,4 +1,4 @@
-CREATE TABLE child (
+CREATE TABLE IF NOT EXISTS child (
 aadhar_id INTEGER(12) NOT NULL ,
 hospital_name VARCHAR(60) NOT NULL ,
 case_no VARCHAR(10)NOT NULL ,
@@ -29,27 +29,29 @@ child_volunteer done
 child_doctor done
 */
 
-CREATE TABLE person (
+CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
 gender CHAR NOT NULL ,
 type VARCHAR(50) NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
-UPDATE TABLE person (
+CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
 gender CHAR NOT NULL ,
-type VARCHAR(50) NOT NULL ,
+type_doctor CHAR NOT NULL ,
+type_volunteer CHAR NOT NULL ,
+type_donor CHAR NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
-CREATE TABLE role (
+CREATE TABLE IF NOT EXISTS role (
 role_id INTEGER(10) NOT NULL ,
 person VARCHAR(15) NOT NULL ,
 PRIMARY KEY (role_id)
 );
 
-CREATE TABLE donation (
+CREATE TABLE IF NOT EXISTS donation (
 donation_id INTEGER(10) NOT NULL ,
 aadhar_id INTEGER(12) NOT NULL references person(aadhar_id),
 receipt_no INTEGER(10) NOT NULL ,
@@ -57,34 +59,34 @@ amount DECIMAL(10,2) NOT NULL ,
 PRIMARY KEY (donation_id)
 );
 
-CREATE TABLE person_role (
+CREATE TABLE IF NOT EXISTS person_role (
 type INTEGER(10) NOT NULL ,
-aadhar_id INTEGER(12) NOT NULL ,
+aadhar_id INTEGER(12) NOT NULL references person(aadhar_id),
 PRIMARY KEY (aadhar_id)
 );
 
-CREATE TABLE child_donor (
+CREATE TABLE IF NOT EXISTS child_donor (
 id_child_donor INTEGER NOT NULL,
 aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id) ,
 aadhar_id_donor INTEGER(12) NOT NULL references person(aadhar_id),
 PRIMARY KEY (id_child_donor)
 );
 
-CREATE TABLE child_doctor (
+CREATE TABLE IF NOT EXISTS child_doctor (
 id_child_doctor INTEGER NOT NULL,
 aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
 aadhar_id_person INTEGER(12) NOT NULL references person(aadhar_id),
 PRIMARY KEY (id_child_doctor)
 );
 
-CREATE TABLE child_volunteer (
+CREATE TABLE IF NOT EXISTS child_volunteer (
 id_child_volunteer INTEGER NOT NULL,
 aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
 aadhar_id_person INTEGER(12) NOT NULL references volunteer(aadhar_id),
 PRIMARY KEY (id_child_volunteer)
 );
 ---------------
-CREATE TABLE referral(
+CREATE TABLE IF NOT EXISTS referral(
  referral_id INTEGER NOT NULL,
  aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  aadhar_id_doctor INTEGER(12) NOT NULL references doctor(aadhar_id),
@@ -94,46 +96,51 @@ CREATE TABLE referral(
 
 /*referral done*/
 
-CREATE TABLE wish (
- wishid int(10) NOT NULL,
- aadhar_id_child int(12) NOT NULL references child(aadhar_id),
+CREATE TABLE wish(
+ wishid INTEGER(10) NOT NULL,
+ aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  wish_detail text NOT NULL,
- priority int(1) NOT NULL,
- approved char(2) NOT NULL,
- approved_by varchar(50) NOT,
- proposed_date date NOT NULL,
- approved_date date NOT NULL,
- fulfillmentdate date NOT NULL,
- fulfieldby int(12) NOT NULL references person(aadhar_id) ,
+ priority INTEGER(1) NOT NULL,
+ approved CHAR NOT NULL,
+ approved_by VARCHAR(50) NOT NULL,
+ proposed_date DATE NOT NULL,
+ approved_date DATE NOT NULL,
+ fulfillmentdate DATE NOT NULL,
+ fulfilldby INTEGER(12) NOT NULL references person(aadhar_id) ,
  PRIMARY KEY (wishid)
-)
-
+);
+/*WISH DONE*/
 
 CREATE TABLE child_memories (
 aadhar_id_child INTEGER(12) NOT NULL ,
-aadhar_id_person INTEGER ,
-url VARCHAR(15) ,
-images BIT NOT NULL DEFAULT 'NULL' ,
+aadhar_id_person INTEGER references person(aadhar_id) ,
+url VARCHAR(512) ,
+images_url VARCHAR(512),
 PRIMARY KEY (aadhar_id_child)
 );
 
 CREATE TABLE address_directory (
-aadhar_id  SERIAL NOT NULL ,
-permanent VARCHAR NOT NULL ,
-temporary TEXT NOT NULL ,
+aadhar_id  INTEGER(12) NOT NULL ,
+permanent_add TEXT NOT NULL ,
+temporary_add TEXT NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
 
-CREATE TABLE `wish` (
- `wishid` int(10) NOT NULL,
- `aadhar_id_child` int(12) NOT NULL,
- `wish_detail` text NOT NULL,
- `priority` int(1) NOT NULL,
- `approved` char(2) NOT NULL,
- `approved_by` varchar(50) NOT NULL,
- `proposed_date` date NOT NULL,
- `approved_date` date NOT NULL,
- `fulfillmentdate` date NOT NULL,
- `fulfieldby` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+CREATE TABLE address_directory (
+aadhar_id  INTEGER(12) NOT NULL ,
+permanent_add TEXT NOT NULL ,
+temporary_add TEXT NOT NULL ,
+PRIMARY KEY (aadhar_id)
+);
+
+
+CREATE TABLE aadhar (
+aadhar_id  INTEGER(12) NOT NULL ,
+name VARCHAR(50) NOT NULL ,
+mobile INTEGER(12) NOT NULL ,
+gender CHAR NOT NULL ,
+dob DATE NOT NULL ,
+address VARCHAR(80) NOT NULL,
+PRIMARY KEY (aadhar_id)
+);
