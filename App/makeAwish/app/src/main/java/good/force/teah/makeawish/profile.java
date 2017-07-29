@@ -17,6 +17,8 @@ public class profile extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+
+
     }
 
 }
