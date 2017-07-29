@@ -112,17 +112,18 @@
 
         <EditText
             android:id="@+id/dateOfBirth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="141dp"
+            android:layout_height="40dp"
             android:ems="10"
             android:inputType="date"
             tools:layout_constraintTop_creator="1"
             tools:layout_constraintRight_creator="1"
             app:layout_constraintRight_toRightOf="@+id/contact"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="13dp"
             app:layout_constraintTop_toBottomOf="@+id/contact"
             tools:layout_constraintLeft_creator="1"
-            app:layout_constraintLeft_toLeftOf="@+id/contact" />
+            app:layout_constraintLeft_toLeftOf="@+id/contact"
+            app:layout_constraintHorizontal_bias="0.0" />
 
         <EditText
             android:id="@+id/name"
@@ -257,6 +258,15 @@
             tools:layout_constraintLeft_creator="1"
             app:layout_constraintLeft_toRightOf="@+id/radio_pirates"
             android:layout_marginLeft="6dp" />
+
+        <Button
+            android:id="@+id/button_pickDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@mipmap/ic_date"
+            tools:layout_editor_absoluteY="246dp"
+            tools:layout_editor_absoluteX="296dp" />
 
 
 </android.support.constraint.ConstraintLayout>

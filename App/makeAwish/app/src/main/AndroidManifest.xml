@@ -16,12 +16,9 @@
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
         <activity android:name=".UploadAMemory">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity android:name=".WishGrantingForm" />
         <activity
             android:name=".Login"
@@ -32,7 +29,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".Registration"> <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>
