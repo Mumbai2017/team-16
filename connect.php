@@ -1,10 +1,7 @@
 <?php
 function connect(){
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "team-16";
-	$conn = @mysqli_connect($servername, $username, $password, $dbname);
+	$data = parse_ini_file("connect.ini");
+	$conn = @mysqli_connect($data['servername'],$data['username'],$data['$password'],$data['dbname']);
 	if (!$conn){
 		echo $error='{"error":"Could not connect"}';
 		exit;
