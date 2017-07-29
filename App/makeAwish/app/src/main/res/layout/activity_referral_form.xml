@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15sp"
     tools:context="good.force.teah.makeawish.ReferralForm">
 
-</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/caseNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Case No." />
+
+            <EditText
+                android:id="@+id/hospName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Hospital name"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/adhaarNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Patient aadhaar number"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/mptherTongue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Mother Tongue"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/fName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Father Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/mName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Mother Name"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/gName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Guardian Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Education"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/siblings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="No. of siblings"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/illness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Illness"
+                android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70sp"
+                android:ems="10"
+                android:hint="Additional Notes"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+            </LinearLayout>
+        </ScrollView>
+
+    <Button
+        android:id="@+id/refer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="refer a child" />
+
+
+</RelativeLayout>
