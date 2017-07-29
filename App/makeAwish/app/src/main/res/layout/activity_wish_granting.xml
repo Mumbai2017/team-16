@@ -7,10 +7,50 @@
     tools:context="good.force.teah.makeawish.WishGrantingForm">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageb_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_people"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/text_Childname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Child name"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="42dp" />
+
+    <TextView
+        android:id="@+id/text_CaseNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Child_case"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/text_parentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chid's Parent"
+        tools:layout_editor_absoluteY="67dp"
+        tools:layout_editor_absoluteX="141dp" />
+
+    <TextView
+        android:id="@+id/text_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Number"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TextView
+        android:id="@+id/text_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="121dp" />
 </android.support.constraint.ConstraintLayout>
