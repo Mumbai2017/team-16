@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -28,6 +31,10 @@ public class LoginFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    EditText email,password;
+    Button login,google;
+    TextView resetPassword;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -64,7 +71,18 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+
+        final View view=inflater.inflate(R.layout.fragment_login, container, false);
+        email=(EditText)view.findViewById(R.id.email);
+        password=(EditText)view.findViewById(R.id.password);
+        login=(Button)view.findViewById(R.id.login);
+        resetPassword=(TextView)view.findViewById(R.id.password_reset);
+
+        //send to database
+        //login ka functionality :(
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
