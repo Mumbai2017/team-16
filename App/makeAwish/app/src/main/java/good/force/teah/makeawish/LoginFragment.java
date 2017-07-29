@@ -144,9 +144,9 @@ public class LoginFragment extends Fragment {
     }*/
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(String uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onLoginFragmentInteraction(uri);
         }
     }
 
@@ -187,6 +187,7 @@ public class LoginFragment extends Fragment {
                         session.setLogin(true);
 
                         // Now store the user in SQLite
+
                         String uid = jObj.getString("uid");
                         JSONObject user = jObj.getJSONObject("user");
                         String name = user.getString("name");
@@ -229,7 +230,7 @@ public class LoginFragment extends Fragment {
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("email", email);
+                params.put("aadhar_id", email);
                 params.put("password", password);
                 return params;
             }
@@ -266,7 +267,8 @@ public class LoginFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        public void onLoginFragmentInteraction(String string);
+
+       //void onFragmentInteraction(Uri uri);
     }
 }
