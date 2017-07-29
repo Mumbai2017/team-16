@@ -1,0 +1,21 @@
+CREATE TABLE "child" (
+"aadhar_id" INTEGER(12) NOT NULL ,
+"hospital_name" VARCHAR(60) NOT NULL ,
+"name" VARCHAR(70) NOT NULL ,
+"dob" DATE NOT NULL /* seharusnya tipe enum */,
+"gender" CHAR NOT NULL ,
+"mother_tongue" VARCHAR(30) NOT NULL DEFAULT 'NULL' ,
+"education" VARCHAR(20) ,
+"fathers_name" VARCHAR(60) ,
+"mothers_name" VARCHAR(50) ,
+"guardian" VARCHAR(50) ,
+"siblings" INTEGER(10) ,
+"illness" VARCHAR(50) NOT NULL ,
+"physician_certified" CHAR(1) NOT NULL DEFAULT 'NULL' ,
+"parent_consent" CHAR ,
+"consent_by" VARCHAR(8) NOT NULL ,
+"witness" VARCHAR(50) NOT NULL ,
+"photo" BIT NOT NULL DEFAULT 'NULL' ,
+PRIMARY KEY ("aadhar_id")
+);
+COMMENT ON COLUMN "child"."dob" IS 'seharusnya tipe enum';
