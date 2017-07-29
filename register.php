@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+	$conn = connect();
 	$data = json_decode('personinsert');
 	$aadhar_id = (int)$data['aadhar_id'];
 	$password = $data['password'];

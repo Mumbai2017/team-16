@@ -1,7 +1,6 @@
 package good.force.teah.makeawish;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +23,6 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
-        Intent intent = getIntent();
 
         name = (EditText)findViewById(R.id.name);
         aadhar = (EditText)findViewById(R.id.aadhar);
