@@ -38,7 +38,8 @@ PRIMARY KEY (aadhar_id)
 
 CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
-gender CHAR NOT NULL ,
+username VARCHAR(30) NOT NULL,
+password VARCHAR(30) NOT NULL,
 type_doctor CHAR NOT NULL ,
 type_volunteer CHAR NOT NULL ,
 type_donor CHAR NOT NULL ,
@@ -98,6 +99,9 @@ CREATE TABLE IF NOT EXISTS referral(
 
 CREATE TABLE wish(
  wishid INTEGER(10) NOT NULL,
+ wish_1 TEXT NOT NULL,
+ wish_2 TEXT ,
+ wish_3 TEXT ,
  aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  wish_detail text NOT NULL,
  priority INTEGER(1) NOT NULL,
