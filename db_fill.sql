@@ -21,7 +21,7 @@ insert into person values (49911864,"1244",'N','N','Y');
 
 
 
-insert into child values (49911866,"Lilavati");
-insert into child values (495246,"Tata Memorial");
+insert into child (aadhar_id, hospital_name, case_no, illness, status) values (49911866,"Lilavati","1A","Leukamia","Referred");
+insert into child (aadhar_id, hospital_name, case_no, illness, status) values (495246,"Tata Memorial","1B","Blood Cancer","Referred");
 
 
