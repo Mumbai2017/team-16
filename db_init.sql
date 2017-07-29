@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS child (
 aadhar_id INTEGER(12) NOT NULL ,
 hospital_name VARCHAR(60) NOT NULL ,
 case_no VARCHAR(10)NOT NULL ,
+gender CHAR NOT NULL ,
 mother_tongue VARCHAR(30)  ,
 education VARCHAR(20) ,
 fathers_name VARCHAR(60) ,
@@ -14,12 +15,9 @@ parent_consent CHAR ,
 consent_by VARCHAR(8)  ,
 witness VARCHAR(50) ,
 photo_url varchar(512),
-status VARCHAR(12) NOT NULL,
 PRIMARY KEY (aadhar_id)
 );
 
-
-Alter table child add status varchar(12) NOT NULL;
 /*child done 
 person done 
 role done and inserted
@@ -31,13 +29,20 @@ child_volunteer done
 child_doctor done
 */
 
+CREATE TABLE IF NOT EXISTS person (
+aadhar_id INTEGER(12) NOT NULL ,
+gender CHAR NOT NULL ,
+type VARCHAR(50) NOT NULL ,
+PRIMARY KEY (aadhar_id)
+);
 
 CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
+username VARCHAR(30) NOT NULL,
 password VARCHAR(30) NOT NULL,
-type_doctor CHAR NOT NULL ,
-type_volunteer CHAR NOT NULL ,
-type_donor CHAR NOT NULL ,
+type_doctor TINYINT NOT NULL ,
+type_volunteer TINYINT NOT NULL ,
+type_donor TINYINT NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
