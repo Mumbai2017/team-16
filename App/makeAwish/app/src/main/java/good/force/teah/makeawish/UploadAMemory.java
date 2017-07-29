@@ -17,9 +17,6 @@ public class UploadAMemory extends YouTubeBaseActivity implements YouTubePlayer.
     private YouTubePlayerView youTubeView;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
