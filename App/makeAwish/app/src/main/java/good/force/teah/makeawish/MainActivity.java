@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //TODO add Payment GateWay
                 String keyIdentifer  = "SignUp";
-                Intent i = new Intent(MainActivity.this, Login.class);
+                Intent i = new Intent(MainActivity.this, anonDonor.class);
                 i.putExtra("strName", keyIdentifer );
                 startActivity(i);
                 Log.d("Login","Signing up....");

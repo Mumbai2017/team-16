@@ -30,4 +30,11 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="357dp"
+        android:layout_height="425dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
 </android.support.design.widget.CoordinatorLayout>

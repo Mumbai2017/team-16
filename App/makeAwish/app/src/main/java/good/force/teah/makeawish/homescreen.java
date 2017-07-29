@@ -55,9 +55,9 @@ public class homescreen extends AppCompatActivity {
         addReferrals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(homescreen.this, viewReferral.class);
+               /* Intent intent = new Intent(homescreen.this, viewReferral.class);
                 startActivity(intent);
-
+*/
             }
         });
 

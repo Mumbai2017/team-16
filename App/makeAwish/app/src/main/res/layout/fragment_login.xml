@@ -6,12 +6,12 @@
 
 
     <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:id="@+id/email"
-        android:hint="Email"
-        android:layout_marginTop="159dp" />
+        android:layout_marginTop="159dp"
+        android:hint="Aadhar Id"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:layout_width="wrap_content"
@@ -50,15 +50,6 @@
         android:text="-OR- "
         android:id="@+id/textView5"
         android:layout_marginBottom="10dp"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Forgot Password? Send Reset  Mail "
-        android:id="@+id/password_reset"
-        android:layout_below="@+id/password"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

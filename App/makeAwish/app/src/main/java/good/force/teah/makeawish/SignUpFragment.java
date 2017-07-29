@@ -1,12 +1,14 @@
 package good.force.teah.makeawish;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -28,6 +30,7 @@ public class SignUpFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    Button signup;
 
     public SignUpFragment() {
         // Required empty public constructor
@@ -64,7 +67,12 @@ public class SignUpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false);
+        View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
+
+        Intent intent = new Intent(getContext(), Registration.class);
+        startActivity(intent);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
