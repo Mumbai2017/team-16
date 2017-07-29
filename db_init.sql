@@ -14,6 +14,7 @@ parent_consent CHAR ,
 consent_by VARCHAR(8)  ,
 witness VARCHAR(50) ,
 photo_url varchar(512),
+status VARCHAR(12) NOT NULL,
 PRIMARY KEY (aadhar_id)
 );
 
@@ -30,16 +31,9 @@ child_volunteer done
 child_doctor done
 */
 
-CREATE TABLE IF NOT EXISTS person (
-aadhar_id INTEGER(12) NOT NULL ,
-gender CHAR NOT NULL ,
-type VARCHAR(50) NOT NULL ,
-PRIMARY KEY (aadhar_id)
-);
 
 CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
-username VARCHAR(30) NOT NULL,
 password VARCHAR(30) NOT NULL,
 type_doctor CHAR NOT NULL ,
 type_volunteer CHAR NOT NULL ,
