@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin =(Button) findViewById(R.id.button_login);
         btnDonate = (Button) findViewById(R.id.button_donate);
         webView = (WebView) findViewById(R.id.webview_main);
+        //enabling javascript
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 
         //TODO Connect webView to the backend
 
