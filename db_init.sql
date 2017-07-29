@@ -108,7 +108,7 @@ CREATE TABLE wish(
  fulfillmentdate DATE NOT NULL,
  fulfilldby INTEGER(12) NOT NULL references person(aadhar_id) ,
  PRIMARY KEY (wishid)
-)
+);
 /*WISH DONE*/
 
 CREATE TABLE child_memories (
