@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="good.force.teah.makeawish.ConsentForm"
+    android:orientation="vertical"
+    android:layout_margin="20sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:padding="5sp"
+            android:textSize="19sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="A. Consent to access medical information" />
+        <TextView
+            android:padding="5sp"
+            android:textSize="19sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="B. Consent to liability release" />
+        <TextView
+            android:padding="5sp"
+            android:textSize="19sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="C. Consent to disclosure/ publicity authorization" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_marginTop="15sp"
+        android:id="@+id/checkBox"
+        android:textSize="13sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="We, the parent(s)/ legal guardian(s)of other minor participants, if any, and other adult participants, if any, acknowledge reading, understanding and agreeing to give our consent to condition mentioned." />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Parent/ Guardian Name"
+        android:layout_marginTop="20sp"/>
+
+
+    <EditText
+        android:layout_marginTop="20sp"
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Volunteer Name" />
+
+    <Button
+        android:layout_marginTop="20sp"
+        android:id="@+id/approveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Approve" />
+</LinearLayout>
