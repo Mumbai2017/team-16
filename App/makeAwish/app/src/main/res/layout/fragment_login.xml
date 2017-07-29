@@ -32,18 +32,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Log In with Google"
-        android:id="@+id/google"
-        android:layout_gravity="left|bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:background="#ffffff"
-        />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +50,6 @@
         android:text="-OR- "
         android:id="@+id/textView5"
         android:layout_marginBottom="10dp"
-        android:layout_above="@+id/google"
         android:layout_centerHorizontal="true" />
 
     <TextView
