@@ -16,6 +16,10 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,7 +98,36 @@ public class LoginFragment extends Fragment {
         String username = email.getText().toString();
         String password = passwordField.getText().toString();
         //method.setText("Get Method");
-        new SigninActivity(this,status,role,0).execute(username,password);
+        //new SigninActivity(this,status,role,0).execute(username,password);
+
+        //if(byGetOrPost == 0){ //means by Get Method
+
+            try{
+               // String username = (String)arg0[0];
+               // String password = (String)arg0[1];
+                String link = "http://myphpmysqlweb.hostei.com/login.php?username="+username+"& password="+password;
+
+                URL url = new URL(link);
+                HttpClient client = new DefaultHttpClient();
+                HttpGet request = new HttpGet();
+                request.setURI(new URI(link));
+                HttpResponse response = client.execute(request);
+                BufferedReader in = new BufferedReader(new
+                        InputStreamReader(response.getEntity().getContent()));
+
+                StringBuffer sb = new StringBuffer("");
+                String line="";
+
+                while ((line = in.readLine()) != null) {
+                    sb.append(line);
+                    break;
+                }
+
+                in.close();
+                //return sb.toString();
+            } catch(Exception e){
+                //return new String("Exception: " + e.getMessage());
+            }
 
     }
 
