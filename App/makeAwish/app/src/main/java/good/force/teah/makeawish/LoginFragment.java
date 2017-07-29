@@ -16,6 +16,10 @@ import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,19 +87,20 @@ public class LoginFragment extends Fragment {
         login=(Button)view.findViewById(R.id.login);
         resetPassword=(TextView)view.findViewById(R.id.password_reset);
 
-        //send to database
-        //login ka functionality :(
+        login.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+
+            }
+        });
+
+
 
 
         return view;
-    }
-
-    public void login(View view){
-        String username = email.getText().toString();
-        String password = passwordField.getText().toString();
-        //method.setText("Get Method");
-        new SigninActivity(this,status,role,0).execute(username,password);
-
     }
 
     /*public void loginPost(View view){
