@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="good.force.teah.makeawish">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
         <activity android:name=".UploadAMemory">
@@ -32,7 +31,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
-        <activity android:name=".Registration"></activity>
+        <activity android:name=".Registration" />
+        <activity
+            android:name=".profile"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".homescreen"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="good.force.teah.makeawish.homescreen" />
+        </activity>
     </application>
 
 </manifest>
