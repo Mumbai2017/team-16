@@ -1,3 +1,42 @@
+
+/*Insert registration data*/
+
+insert into table person (aadhar_id, dob, phone, gender, type_doctor, type_volunteer,type_donor) values (insert input datafields here);
+
+/*Child insert*/
+
+insert into child (aadhar_id, hospital_name, case_no, name, dob, gender, mother_tongue, education, 
+fathers_name, mothers_name, guardian, siblings, illness, notes, parent_consent, consent_by, witness, photo) 
+values (aad, hos, case, name, dob, gen, language, fath_name, moth_name, guard, no_of_siblings, 
+illness, notes, par_consent, consent_by_name, witness_name, photo );
+
+
+
+
+"aadhar_id" INTEGER(12) NOT NULL ,
+"hospital_name" VARCHAR(60) NOT NULL ,
+"case_no" VARCHAR(10)NOT NULL ,
+"name" VARCHAR(70) NOT NULL ,
+"dob" DATE NOT NULL /* seharusnya tipe enum */,
+"gender" CHAR NOT NULL ,
+"mother_tongue" VARCHAR(30)  ,
+"education" VARCHAR(20) ,
+"fathers_name" VARCHAR(60) ,
+"mothers_name" VARCHAR(50) ,
+"guardian" VARCHAR(50) ,
+"siblings" INTEGER(10) ,
+"illness" VARCHAR(50) NOT NULL ,
+"notes" TEXT ,
+"parent_consent" CHAR ,
+"consent_by" VARCHAR(8)  ,
+"witness" VARCHAR(50) ,
+"photo" BIT NOT NULL DEFAULT  ,
+PRIMARY KEY ("aadhar_id")
+
+
+
+
+/*Login Authentication */
 select count(aadhar_id) from person where username = "dummy" AND password = "dummy";
 
 
