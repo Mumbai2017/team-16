@@ -18,6 +18,8 @@ photo_url varchar(512),
 PRIMARY KEY (aadhar_id)
 );
 
+
+Alter table child add status varchar(12) NOT NULL;
 /*child done 
 person done 
 role done and inserted
