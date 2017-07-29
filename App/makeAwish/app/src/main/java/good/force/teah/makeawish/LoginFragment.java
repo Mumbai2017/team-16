@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URL;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +37,7 @@ public class LoginFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    EditText email,password;
+    EditText email,passwordField;
     Button login,google;
     TextView resetPassword;
 
@@ -74,7 +79,7 @@ public class LoginFragment extends Fragment {
 
         final View view=inflater.inflate(R.layout.fragment_login, container, false);
         email=(EditText)view.findViewById(R.id.email);
-        password=(EditText)view.findViewById(R.id.password);
+        passwordField=(EditText)view.findViewById(R.id.password);
         login=(Button)view.findViewById(R.id.login);
         resetPassword=(TextView)view.findViewById(R.id.password_reset);
 
@@ -84,6 +89,21 @@ public class LoginFragment extends Fragment {
 
         return view;
     }
+
+    public void login(View view){
+        String username = email.getText().toString();
+        String password = passwordField.getText().toString();
+        //method.setText("Get Method");
+        new SigninActivity(this,status,role,0).execute(username,password);
+
+    }
+
+    /*public void loginPost(View view){
+        String username = usernameField.getText().toString();
+        String password = passwordField.getText().toString();
+        method.setText("Post Method");
+        new SigninActivity(this,status,role,1).execute(username,password);
+    }*/
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
