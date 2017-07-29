@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConsentForm"></activity>
+        <activity android:name=".ConsentForm" />
+        <activity android:name=".ReferralForm"></activity>
     </application>
 
 </manifest>
