@@ -36,14 +36,14 @@
                             <table class="table table-borderless">
                                 <thead>
                                     <tr>
-                                        <th>ID</th><th>Child Name</th><th>Wish Details</th><th>Actions</th>
+                                        <th>ID</th><th>Child Aadhar</th><th>Wish Details</th><th>Wish 1</th><th>Wish 2</th><th>Wish 3</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($wishs as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name }}</td><td>{{ $item->details }}</td>
+                                        <td>{{ $item->name }}</td><td>{{ $item->details }}</td><td>{{ $item->wish1 }}</td><td>{{ $item->wish2 }}</td><td>{{ $item->wish3 }}</td>
                                         <td>
                                             <a href="{{ url('/frontend/wishs/' . $item->id) }}" title="View Wish"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/frontend/wishs/' . $item->id . '/edit') }}" title="Edit Wish"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

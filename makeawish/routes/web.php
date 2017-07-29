@@ -37,6 +37,6 @@ Route::resource('frontend/childs', 'ChildsController');
 
 // Check role in route middleware
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
-   Route::get('/', ['uses' => 'AdminController@index']);
+   Route::get('/', ['uses' => 'AdminController@index']);	
 });
 Route::resource('frontend/wishs', 'WishsController');
