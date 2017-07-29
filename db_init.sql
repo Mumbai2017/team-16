@@ -34,7 +34,6 @@ child_doctor done
 
 CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
-username VARCHAR(30) NOT NULL,
 password VARCHAR(30) NOT NULL,
 type_doctor CHAR NOT NULL ,
 type_volunteer CHAR NOT NULL ,
