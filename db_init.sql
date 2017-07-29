@@ -18,8 +18,6 @@ photo_url varchar(512),
 PRIMARY KEY (aadhar_id)
 );
 
-
-Alter table child add status varchar(12) NOT NULL;
 /*child done 
 person done 
 role done and inserted
@@ -31,14 +29,20 @@ child_volunteer done
 child_doctor done
 */
 
+CREATE TABLE IF NOT EXISTS person (
+aadhar_id INTEGER(12) NOT NULL ,
+gender CHAR NOT NULL ,
+type VARCHAR(50) NOT NULL ,
+PRIMARY KEY (aadhar_id)
+);
 
 CREATE TABLE IF NOT EXISTS person (
 aadhar_id INTEGER(12) NOT NULL ,
 username VARCHAR(30) NOT NULL,
 password VARCHAR(30) NOT NULL,
-type_doctor CHAR NOT NULL ,
-type_volunteer CHAR NOT NULL ,
-type_donor CHAR NOT NULL ,
+type_doctor TINYINT NOT NULL ,
+type_volunteer TINYINT NOT NULL ,
+type_donor TINYINT NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
