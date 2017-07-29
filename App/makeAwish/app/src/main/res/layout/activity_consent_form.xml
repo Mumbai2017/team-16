@@ -57,6 +57,15 @@
 
     <EditText
         android:layout_marginTop="20sp"
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Witness name" />
+
+    <EditText
+        android:layout_marginTop="20sp"
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
