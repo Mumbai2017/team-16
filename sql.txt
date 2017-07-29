@@ -126,3 +126,21 @@ temporary_add TEXT NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
+
+CREATE TABLE address_directory (
+aadhar_id  INTEGER(12) NOT NULL ,
+permanent_add TEXT NOT NULL ,
+temporary_add TEXT NOT NULL ,
+PRIMARY KEY (aadhar_id)
+);
+
+
+CREATE TABLE aadhar (
+aadhar_id  INTEGER(12) NOT NULL ,
+name VARCHAR(50) NOT NULL ,
+mobile INTEGER(12) NOT NULL ,
+gender CHAR NOT NULL ,
+dob DATE NOT NULL ,
+address VARCHAR(80) NOT NULL,
+PRIMARY KEY (aadhar_id)
+);
