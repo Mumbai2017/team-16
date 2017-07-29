@@ -1,0 +1,3 @@
+select count(aadhar_id) from person where username = "dummy" AND password = "dummy";
+
+
