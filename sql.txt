@@ -15,7 +15,7 @@ CREATE TABLE "child" (
 "parent_consent" CHAR ,
 "consent_by" VARCHAR(8) NOT NULL ,
 "witness" VARCHAR(50) NOT NULL ,
-"photo" BIT NOT NULL DEFAULT 'NULL' ,
+"photo" BLOB NOT NULL ,
 PRIMARY KEY ("aadhar_id")
 );
 COMMENT ON COLUMN "child"."dob" IS 'seharusnya tipe enum';
