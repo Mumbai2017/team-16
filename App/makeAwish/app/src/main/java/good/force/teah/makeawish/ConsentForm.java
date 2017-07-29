@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class ConsentForm extends AppCompatActivity {
-EditText parentName,  formExplainedBy;
+EditText parentName,  formExplainedBy, witness;
 CheckBox checkBox;
 boolean flag=false;
     Button approve;
@@ -21,6 +21,7 @@ boolean flag=false;
 
         parentName=(EditText)findViewById(R.id.editText);
         formExplainedBy=(EditText)findViewById(R.id.editText2);
+        witness=(EditText)findViewById(R.id.editText3);
         approve=(Button)findViewById(R.id.approveButton);
         checkBox=(CheckBox)findViewById(R.id.checkBox);
         checkBox.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +42,7 @@ boolean flag=false;
         approve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(parentName.getText().toString().length()==0 || formExplainedBy.getText().toString().length()==0)
+                if(parentName.getText().toString().length()==0 || formExplainedBy.getText().toString().length()==0 || witness.getText().toString().length()==0)
                 {
                     Toast.makeText(getApplicationContext(),"Please enter all the values",Toast.LENGTH_LONG).show();
                 }
