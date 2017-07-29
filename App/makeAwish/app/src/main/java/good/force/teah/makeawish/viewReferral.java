@@ -10,7 +10,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 import good.force.teah.makeawish.Data.wish;
 import good.force.teah.makeawish.Data.wishAdapter;
 
@@ -41,3 +41,4 @@ public class viewReferral extends AppCompatActivity {
 
     }
 }
+*/
