@@ -31,8 +31,6 @@ EditText caseNo, hospitalName, adhaar, mothertongue, fname, mname, gname, educat
         refer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Connector connector=new Connector(ReferralForm.this);
-               // connector.execute()
             }
         });
     }
