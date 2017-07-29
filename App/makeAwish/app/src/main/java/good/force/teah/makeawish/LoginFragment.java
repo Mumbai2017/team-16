@@ -87,48 +87,20 @@ public class LoginFragment extends Fragment {
         login=(Button)view.findViewById(R.id.login);
         resetPassword=(TextView)view.findViewById(R.id.password_reset);
 
-        //send to database
-        //login ka functionality :(
+        login.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+
+            }
+        });
+
+
 
 
         return view;
-    }
-
-    public void login(View view){
-        String username = email.getText().toString();
-        String password = passwordField.getText().toString();
-        //method.setText("Get Method");
-        //new SigninActivity(this,status,role,0).execute(username,password);
-
-        //if(byGetOrPost == 0){ //means by Get Method
-
-            try{
-               // String username = (String)arg0[0];
-               // String password = (String)arg0[1];
-                String link = "http://myphpmysqlweb.hostei.com/login.php?username="+username+"& password="+password;
-
-                URL url = new URL(link);
-                HttpClient client = new DefaultHttpClient();
-                HttpGet request = new HttpGet();
-                request.setURI(new URI(link));
-                HttpResponse response = client.execute(request);
-                BufferedReader in = new BufferedReader(new
-                        InputStreamReader(response.getEntity().getContent()));
-
-                StringBuffer sb = new StringBuffer("");
-                String line="";
-
-                while ((line = in.readLine()) != null) {
-                    sb.append(line);
-                    break;
-                }
-
-                in.close();
-                //return sb.toString();
-            } catch(Exception e){
-                //return new String("Exception: " + e.getMessage());
-            }
-
     }
 
     /*public void loginPost(View view){
