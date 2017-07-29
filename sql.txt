@@ -96,46 +96,33 @@ CREATE TABLE referral(
 
 /*referral done*/
 
-CREATE TABLE wish (
- wishid int(10) NOT NULL,
- aadhar_id_child int(12) NOT NULL references child(aadhar_id),
+CREATE TABLE wish(
+ wishid INTEGER(10) NOT NULL,
+ aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
  wish_detail text NOT NULL,
- priority int(1) NOT NULL,
- approved char(2) NOT NULL,
- approved_by varchar(50) NOT,
- proposed_date date NOT NULL,
- approved_date date NOT NULL,
- fulfillmentdate date NOT NULL,
- fulfieldby int(12) NOT NULL references person(aadhar_id) ,
+ priority INTEGER(1) NOT NULL,
+ approved CHAR NOT NULL,
+ approved_by VARCHAR(50) NOT NULL,
+ proposed_date DATE NOT NULL,
+ approved_date DATE NOT NULL,
+ fulfillmentdate DATE NOT NULL,
+ fulfilldby INTEGER(12) NOT NULL references person(aadhar_id) ,
  PRIMARY KEY (wishid)
 )
-
+/*WISH DONE*/
 
 CREATE TABLE child_memories (
 aadhar_id_child INTEGER(12) NOT NULL ,
-aadhar_id_person INTEGER ,
-url VARCHAR(15) ,
-images BIT NOT NULL DEFAULT 'NULL' ,
+aadhar_id_person INTEGER references person(aadhar_id) ,
+url VARCHAR(512) ,
+images_url VARCHAR(512),
 PRIMARY KEY (aadhar_id_child)
 );
 
 CREATE TABLE address_directory (
-aadhar_id  SERIAL NOT NULL ,
-permanent VARCHAR NOT NULL ,
-temporary TEXT NOT NULL ,
+aadhar_id  INTEGER(12) NOT NULL ,
+permanent_add TEXT NOT NULL ,
+temporary_add TEXT NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
-
-CREATE TABLE `wish` (
- `wishid` int(10) NOT NULL,
- `aadhar_id_child` int(12) NOT NULL,
- `wish_detail` text NOT NULL,
- `priority` int(1) NOT NULL,
- `approved` char(2) NOT NULL,
- `approved_by` varchar(50) NOT NULL,
- `proposed_date` date NOT NULL,
- `approved_date` date NOT NULL,
- `fulfillmentdate` date NOT NULL,
- `fulfieldby` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
