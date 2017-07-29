@@ -212,9 +212,9 @@
             android:text="Donor"
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintBottom_creator="1"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/button_submit"
             android:layout_marginEnd="21dp"
-            app:layout_constraintRight_toRightOf="@+id/button"
+            app:layout_constraintRight_toRightOf="@+id/button_submit"
             android:layout_marginBottom="7dp"
             android:layout_marginRight="21dp" />
 
