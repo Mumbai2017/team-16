@@ -6,6 +6,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -15,7 +16,7 @@ import static good.force.teah.makeawish.R.styleable.View;
 
 public class homescreen extends AppCompatActivity {
 
-    ImageButton viewProfile, viewReferrals , addReferrals, faq;
+    ImageButton viewProfile, viewReferrals , addReferrals, faq, calender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,36 @@ public class homescreen extends AppCompatActivity {
         viewReferrals = (ImageButton)findViewById(R.id.button_view_refferal);
         addReferrals = (ImageButton)findViewById(R.id.button_add_refferal);
         faq = (ImageButton)findViewById(R.id.button_faq);
+        calender = (ImageButton)findViewById(R.id.button_calender);
+
+        viewProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        viewReferrals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        addReferrals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
 
 
