@@ -36,10 +36,12 @@ type VARCHAR(50) NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
-UPDATE TABLE person (
+CREATE TABLE person (
 aadhar_id INTEGER(12) NOT NULL ,
 gender CHAR NOT NULL ,
-type VARCHAR(50) NOT NULL ,
+type_doctor CHAR NOT NULL ,
+type_volunteer CHAR NOT NULL ,
+type_donor CHAR NOT NULL ,
 PRIMARY KEY (aadhar_id)
 );
 
@@ -59,7 +61,7 @@ PRIMARY KEY (donation_id)
 
 CREATE TABLE person_role (
 type INTEGER(10) NOT NULL ,
-aadhar_id INTEGER(12) NOT NULL ,
+aadhar_id INTEGER(12) NOT NULL references person(aadhar_id),
 PRIMARY KEY (aadhar_id)
 );
 
