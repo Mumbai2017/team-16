@@ -11,14 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-<<<<<<< HEAD
-=======
 
-        </activity>
-        <activity android:name=".ConsentForm" />
-        <activity android:name=".ReferralForm" />
-        <activity android:name=".UploadAMemory">
->>>>>>> 293449ff202d0ce23f94faaa85298d816b627c21
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
