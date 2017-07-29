@@ -31,6 +31,7 @@ public class Registration extends AppCompatActivity {
         aadhar = (EditText)findViewById(R.id.aadhar);
         dateOfBirth = (EditText)findViewById(R.id.dateOfBirth);
         submit = (Button)findViewById(R.id.button_submit);
+        pickDate = (Button) findViewById(R.id.button_pickDate);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

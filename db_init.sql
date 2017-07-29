@@ -2,7 +2,6 @@ CREATE TABLE IF NOT EXISTS child (
 aadhar_id INTEGER(12) NOT NULL ,
 hospital_name VARCHAR(60) NOT NULL ,
 case_no VARCHAR(10)NOT NULL ,
-gender CHAR NOT NULL ,
 mother_tongue VARCHAR(30)  ,
 education VARCHAR(20) ,
 fathers_name VARCHAR(60) ,
@@ -15,6 +14,7 @@ parent_consent CHAR ,
 consent_by VARCHAR(8)  ,
 witness VARCHAR(50) ,
 photo_url varchar(512),
+status varchar(12) NOT NULL,
 PRIMARY KEY (aadhar_id)
 );
 
@@ -87,13 +87,7 @@ aadhar_id_person INTEGER(12) NOT NULL references volunteer(aadhar_id),
 PRIMARY KEY (id_child_volunteer)
 );
 ---------------
-CREATE TABLE IF NOT EXISTS referral(
- referral_id INTEGER NOT NULL,
- aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
- aadhar_id_doctor INTEGER(12) NOT NULL references doctor(aadhar_id),
- status varchar(12) NOT NULL,
- PRIMARY KEY (referral_id)
-);
+
 
 /*referral done*/
 

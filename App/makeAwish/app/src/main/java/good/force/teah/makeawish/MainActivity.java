@@ -3,6 +3,7 @@ package good.force.teah.makeawish;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //TODO add Payment GateWay
+                String keyIdentifer  = "SignUp";
+                Intent i = new Intent(MainActivity.this, Login.class);
+                i.putExtra("strName", keyIdentifer );
+                startActivity(i);
+                Log.d("Login","Signing up....");
             }
         });
 
@@ -39,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // go to the Login page
+                String keyIdentifer  = "Login";
                 Intent i = new Intent(MainActivity.this, Login.class);
+                i.putExtra("strName", keyIdentifer );
                 startActivity(i);
             }
         });
