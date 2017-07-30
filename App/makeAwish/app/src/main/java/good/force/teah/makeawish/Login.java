@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity implements LoginFragment.OnFragment
 
 
         fragment_change = bundle.getString("strName");
-        Log.d("Fragment oprnin",fragment_change);
+        Log.d("Fragment opening",fragment_change);
         if(fragment_change.equalsIgnoreCase("Login"))
         {
             fragmentClass = LoginFragment.class;
