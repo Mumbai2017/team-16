@@ -64,34 +64,6 @@ public class ReferralForm extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 //Log.d(TAG, "Register Response: " + response.toString());
-
-                try {
-                    JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
-                    if (!error) {
-                        // User successfully stored in MySQL
-                        // Now store the user in sqlite
-                        String uid = jObj.getString("uid");
-
-                        JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
-                        String email = user.getString("email");
-                        String created_at = user
-                                .getString("created_at");
-
-                        // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
-
-                        Toast.makeText(ReferralForm.this, "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
-                    } else {
-                        String errorMsg = jObj.getString("error_msg");
-                        Toast.makeText(ReferralForm.this,
-                                errorMsg, Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
             }
         }, new Response.ErrorListener() {
 
