@@ -75,11 +75,6 @@ Bundle bundle;
             }
         });
 
-
-
-
-
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
