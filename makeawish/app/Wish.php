@@ -25,7 +25,7 @@ class Wish extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'details','wish1','wish2','wish3'];
+    protected $fillable = ['name', 'details','wish1','wish2','wish3','wish1_type','wish2_type','wish3_type'];
 
     
 }

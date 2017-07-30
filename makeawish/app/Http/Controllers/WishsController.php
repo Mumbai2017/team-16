@@ -53,6 +53,18 @@ class WishsController extends Controller
     {
         
         $requestData = $request->all();
+        print_r($requestData);
+        $requestData['wish1_type']='to meet';
+                $requestData['wish2_type']='to see';
+
+        $requestData['wish3_type']='to go';
+
+
+            
+
+
+        
+       // $requestData.indexOf("turtles") > -1
         
         Wish::create($requestData);
 

@@ -40,3 +40,4 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
    Route::get('/', ['uses' => 'AdminController@index']);	
 });
 Route::resource('frontend/wishs', 'WishsController');
+Route::get('/sms', 'sms@index');
