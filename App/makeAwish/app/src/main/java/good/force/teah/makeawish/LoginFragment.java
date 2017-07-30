@@ -31,6 +31,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -100,7 +101,7 @@ public class LoginFragment extends Fragment {
         emailField=(EditText)view.findViewById(R.id.email);
         passwordField=(EditText)view.findViewById(R.id.password);
         buttonLogin=(Button)view.findViewById(R.id.login);
-        resetPassword=(TextView)view.findViewById(R.id.password_reset);
+     //   resetPassword=(TextView)view.findViewById(R.id.password_reset);
         // Progress dialog
         pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);
@@ -180,36 +181,40 @@ public class LoginFragment extends Fragment {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
-                    boolean error = jObj.getBoolean("error");
+                    //JSONArray jsonArray= new JSONArray(response);
+                    //boolean error = jObj.getBoolean("error");
 
                     // Check for error node in json
-                    if (!error) {
+                    //if (!error) {
                         // user successfully logged in
                         // Create login session
-                        session.setLogin(true);
+                        //session.setLogin(true);
 
                         // Now store the user in SQLite
 
-                        String uid = jObj.getString("uid");
-                        JSONObject user = jObj.getJSONObject("user");
-                        String name = user.getString("name");
-                        String email = user.getString("email");
+                       String uid = jObj.getString("aadhar_id");
+                    //String
+                       Log.d("response",uid);
+
+                      /*  JSONObject user = jObj.getJSONObject("username");
+                        String name = user.getString("doctor");
+                        String email = user.getString("volunteer");
                         String created_at = user
-                                .getString("created_at");
+                                .getString("donor"); */
 
                         // Inserting row in users table
-                        db.addUser(name, email, uid, created_at);
-
-                        Intent intent = new Intent(getActivity(),
-                                MainActivity.class);
-                        startActivity(intent);
-                        getActivity().getFragmentManager().popBackStack();
-                    } else {
+                     //   db.addUser(name, email, uid, created_at);
+                    String keyIdentifer  = "SignUp";
+                    Intent intent = new Intent(getContext(),homescreen.class);
+                    intent.putExtra("strName", keyIdentifer );
+                        LoginFragment.this.startActivity(intent);
+                        //getActivity().getFragmentManager().popBackStack();
+                   /* } else {
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
-                    }
+                    }*/
                 } catch (JSONException e) {
                     // JSON error
                     e.printStackTrace();

@@ -7,13 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class Registration extends AppCompatActivity {
 
-    private EditText name,aadhar,dateOfBirth;
+    private EditText aadhar;
+    private TextView name,dateOfBirth;
     private Button submit,pickDate;
     private int mYear, mMonth, mDay;
 
@@ -24,11 +26,11 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        name = (EditText)findViewById(R.id.name);
+        name = (TextView)findViewById(R.id.name);
         aadhar = (EditText)findViewById(R.id.aadhar);
-        dateOfBirth = (EditText)findViewById(R.id.dateOfBirth);
-        submit = (Button)findViewById(R.id.button_submit);
-        pickDate = (Button) findViewById(R.id.button_pickDate);
+        dateOfBirth = (TextView)findViewById(R.id.dob);
+        submit = (Button)findViewById(R.id.register);
+       // pickDate = (Button) findViewById(R.id.button_pickDate);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
