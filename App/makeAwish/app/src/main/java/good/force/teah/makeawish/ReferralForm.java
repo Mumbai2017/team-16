@@ -45,12 +45,16 @@ public class ReferralForm extends AppCompatActivity {
         refer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                registerUser(
+                        caseNo.getText().toString(), hospitalName.getText().toString(),adhaar.getText().toString(), mothertongue.getText().toString(),
+                        fname.getText().toString(), mname.getText().toString(), gname.getText().toString(), education.getText().toString(),
+                        siblings.getText().toString(), illness.getText().toString(),notes.getText().toString()
+                );
             }
         });
     }
 
-    private void registerUser(String email, String caseNo,String hospitalName,
-                              String password) {
+    private void registerUser(final String caseNo, final String hospital,final  String adhaar,final  String mtongue, final String fname,final  String mname, final String gname,final  String edu, final String siblings,final  String illness, final String notes) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
@@ -102,8 +106,19 @@ public class ReferralForm extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("email", email);
-                params.put("password", password);
+                params.put("caseNo", caseNo);
+                params.put("hospital", hospital);
+                params.put("adhaar", adhaar);
+                params.put("mother tongue", mtongue);
+                params.put("fname", fname);
+                params.put("mname", mname);
+                params.put("gname", gname);
+                params.put("edu", edu);
+                params.put("siblings", siblings);
+                params.put("illness", illness);
+                params.put("notes", notes);
+
+                
                 return params;
             }
 
