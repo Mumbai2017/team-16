@@ -30,25 +30,33 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        Log.i("FLAG","hey1");
         Intent out = getIntent();
-
+        Log.i("FLAG","hey2");
 
         blah = (EditText)findViewById(R.id.editText5);
 
         syncTask=new mySyncTask();
-        Log.i("FLAG",Integer.toString(out.getFlags()));
+        Log.i("FLAG","hey3");
         //if(out.getFlags()==0)
             syncTask.execute(out.getStringExtra("name"));
         //else
           //  syncTask.execute(out.getStringExtra("state"),out.getStringExtra("cat"),out.getStringExtra("data"));
 
         ArrayList<String> xlist=new ArrayList<>();
+        String listString = "";
         try
         {
             xlist = syncTask.get();
+
+
+
+            for (String s : xlist)
+            {
+                listString += s + "\t";
+            }
             //if(xlist!=null)
-           // Log.i("xlist",xlist.toString());
+           Log.i("list",listString);
             //else
             //  Toast.makeText(this,"Error,xlist is empty",Toast.LENGTH_LONG);
         }
@@ -60,7 +68,7 @@ public class profile extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-       // blah.setText(xlist.toString());
+       blah.setText(listString);
        // bundle.putStringArrayList("list",xlist);
 
 
@@ -70,10 +78,13 @@ public class profile extends AppCompatActivity {
 
 class mySyncTask extends AsyncTask<String, Void, ArrayList>
 {
+
+
     @Override
     protected ArrayList doInBackground(String... params)
     {
 
+        Log.i("BLAH","inside class");
         String state=params[0];
         String index=null,data=null;
         if(params.length>1)
@@ -99,8 +110,10 @@ class mySyncTask extends AsyncTask<String, Void, ArrayList>
                 ArrayList<String> list=new ArrayList<>();
                 BufferedReader reader=new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 JSONObject jsonObject=new JSONObject(reader.readLine());
-                JSONArray jsonArray=jsonObject.getJSONArray("name");
-                Log.i("BLAH",jsonArray.getJSONObject(0).get("name").toString());
+                JSONArray jsonArray=jsonObject.getJSONArray("data");
+                JSONArray jsonArray1=jsonArray.getJSONObject(0).getJSONArray("practices");
+                JSONObject jsonObject2 = jsonArray1.getJSONObject(0);
+                Log.i("BLAH111",jsonObject2.get("name").toString());
                 Log.i("BLAH",jsonArray.toString());
 
                 if (index!=null)
@@ -110,12 +123,14 @@ class mySyncTask extends AsyncTask<String, Void, ArrayList>
 
                 Log.i("blah",jsonArray.toString());
 
-                //list.add(jsonArray.getJSONObject(0).get("FullTimeTeachersMale").toString());
-                //list.add(jsonArray.getJSONObject(0).get("FullTimeTeachersFemale").toString());
+              // JSONArray jsonObject1 = jsonArray.getJSONObject(0).get("practices");
+
+                list.add(jsonObject2.get("name").toString());
+                //list.add(jsonArray.getJSONObject(0).get("lat").toString());
                 //list.add(jsonArray.getJSONObject(0).get("ParaContractTeachersMale").toString());
                 //list.add(jsonArray.getJSONObject(0).get("ParaContractTeachersFemale").toString());
 
-                Log.i("Array list in MySyncTa",list.toString());
+                Log.i("Array list in MySyncTa",jsonArray.toString());
 
                 reader.close();
                 return list;

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_login"
     tools:context="good.force.teah.makeawish.LoginFragment">
 
 
@@ -51,5 +52,16 @@
         android:id="@+id/textView5"
         android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true" />
+    <Button
+        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don&apos;t have an account? Sign up."
+        android:id="@+id/btn_signUp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

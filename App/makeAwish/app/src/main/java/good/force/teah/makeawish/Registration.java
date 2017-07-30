@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,7 +21,6 @@ public class Registration extends AppCompatActivity {
     private int mYear, mMonth, mDay;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +29,9 @@ public class Registration extends AppCompatActivity {
         name = (TextView)findViewById(R.id.name);
         aadhar = (EditText)findViewById(R.id.aadhar);
         dateOfBirth = (TextView)findViewById(R.id.dob);
-        submit = (Button)findViewById(R.id.register);
+       // submit = (Button)findViewById(R.id.register);
        // pickDate = (Button) findViewById(R.id.button_pickDate);
-
+/*
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +62,7 @@ public class Registration extends AppCompatActivity {
 
             }
         });
-
+*/
 
     }
 }

@@ -5,10 +5,26 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -24,14 +40,19 @@ public class SignUpFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String TAG ="SignUP" ;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private EditText email,password;
+    private Button login;
+    private CheckBox dcotor,volunteer,donor;
 
     private OnFragmentInteractionListener mListener;
     Button signup;
-
+    private good.force.teah.makeawish.Data.DataHandler db;
+    int doc, vol, don;
     public SignUpFragment() {
         // Required empty public constructor
     }
@@ -60,6 +81,7 @@ public class SignUpFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -68,10 +90,56 @@ public class SignUpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
+        email = (EditText) view.findViewById(R.id.editText3);
+        password = (EditText) view.findViewById(R.id.editText4);
+        login = (Button) view.findViewById(R.id.btn_sign);
+        dcotor  = (CheckBox) view.findViewById(R.id.checkBox2);
+        volunteer = (CheckBox) view.findViewById(R.id.checkBox3);
+        donor = (CheckBox) view.findViewById(R.id.checkBox4);
+        dcotor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(dcotor.isChecked())
+                    doc= 1;
+                else
+                    doc=0;
+            }
+        });
+        volunteer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(volunteer.isChecked())
+                    vol= 1;
+                else
+                    vol=0;
+            }
+        });
+        donor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(donor.isChecked())
+                    don= 1;
+                else
+                    don=0;
+            }
+        });
 
-        Intent intent = new Intent(getContext(), Registration.class);
-        startActivity(intent);
 
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String em = email.getText().toString().trim();
+                String pass = password.getText().toString().trim();
+                if (!em.isEmpty() && !pass.isEmpty()) {
+                    registerUser(em, pass, doc,vol,don);
+                } else {
+                    // Prompt user to enter credentials
+                    Toast.makeText(getContext(),
+                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            .show();
+                }
+            }
+        });
         return view;
     }
 
@@ -112,5 +180,72 @@ public class SignUpFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onSignUpFragmentInteractionListener(Uri uri);
+    }
+
+    private void registerUser(final String email,
+                              final String password, final int doc,final int vol,final int don) {
+        // Tag used to cancel the request
+        String tag_string_req = "req_register";
+
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                good.force.teah.makeawish.Config.config.URL_REGISTER, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Log.d(TAG, "Register Response: " + response.toString());
+
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+                    if (!error) {
+                        // User successfully stored in MySQL
+                        // Now store the user in sqlite
+                        String uid = jObj.getString("uid");
+
+                        JSONObject user = jObj.getJSONObject("user");
+                        String name = user.getString("name");
+                        String email = user.getString("email");
+                        String created_at = user
+                                .getString("created_at");
+
+                        // Inserting row in users table
+                        db.addUser(name, email, uid, created_at);
+
+                        Toast.makeText(getContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+                    } else {
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "Registration Error: " + error.getMessage());
+                Toast.makeText(getContext(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("email", email);
+                params.put("password", password);
+                params.put("doctor",Integer.toString(doc));
+                params.put("volunteer",Integer.toString(vol));
+                params.put("donor",Integer.toString(don));
+                return params;
+            }
+
+        };
+
+        // Adding request to request queue
+        App.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
 }

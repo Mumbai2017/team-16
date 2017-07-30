@@ -12,5 +12,5 @@ public class config {
     public static String URL_LOGIN = "http://192.168.43.72/login.php";
 
     // Server user register url
-    public static String URL_REGISTER = "http://13.229.54.120/register.php";
+    public static String URL_REGISTER = "http://192.168.43.72/register.php";
 }
