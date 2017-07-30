@@ -8,6 +8,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,8 +21,8 @@ import android.widget.ListView;
 import static good.force.teah.makeawish.R.styleable.View;
 
 public class homescreen extends AppCompatActivity {
-
-    LinearLayout viewProfile, viewReferrals , addReferrals, faq, calender;
+Bundle bundle;
+    LinearLayout viewProfile, viewReferrals , addReferrals, search, donation;
     EditText hey;
 
     @Override
@@ -31,9 +33,11 @@ public class homescreen extends AppCompatActivity {
         viewProfile = (LinearLayout)findViewById(R.id.button_profile);
         viewReferrals = (LinearLayout)findViewById(R.id.button_view_refferal);
         addReferrals = (LinearLayout)findViewById(R.id.button_add_refferal);
-        faq = (LinearLayout)findViewById(R.id.button_faq);
-        calender = (LinearLayout)findViewById(R.id.button_calender);
+        search = (LinearLayout)findViewById(R.id.button_faq);
+        donation= (LinearLayout)findViewById(R.id.button_calender);
 
+       // String uid= bundle.getString("uid");
+String uid="2343";
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,8 +65,15 @@ public class homescreen extends AppCompatActivity {
 
             }
         });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        calender.setOnClickListener(new View.OnClickListener() {
+                Intent intent = new Intent(homescreen.this, AdminPanel.class);
+                startActivity(intent);
+            }
+        });
+        donation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -71,10 +82,27 @@ public class homescreen extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.menu_exit:
+                //Kill the app
+                System.exit(0);
+                return true;
+            case R.id.menu_volunteer:
+                Intent intent = new Intent(homescreen.this, ConsentForm.class);
+                intent.putExtra("uid","uid");
+                startActivity(intent);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
