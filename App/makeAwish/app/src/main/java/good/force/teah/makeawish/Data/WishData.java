@@ -3,10 +3,6 @@ package good.force.teah.makeawish.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by vighn on 30/07/2017.
- */
-
 public class WishData {
     private static final String[] names={"swarali","akshu","gauri"};
     private static final String[] status={"pending","approved","granted"};

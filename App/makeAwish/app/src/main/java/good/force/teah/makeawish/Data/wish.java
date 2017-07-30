@@ -35,6 +35,10 @@ public class wish {
     public wish() {
     }
 
+    public  wish (String name, String status){
+        this.name = name;
+        this.status = status;
+    }
     public wish(String name, String status, int imageResId) {
 
         this.name = name;
