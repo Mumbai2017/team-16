@@ -14,21 +14,21 @@
 <div class="form-group {{ $errors->has('details') ? 'has-error' : ''}}">
     {!! Form::label('wish1', 'Wish1', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('wish1', null, ['class' => 'form-control']) !!}
+        {!! Form::text('wish1', null, array('placeholder'=>'to meet' ),['class' => 'form-control']) !!}
         {!! $errors->first('wish1', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('details') ? 'has-error' : ''}}">
     {!! Form::label('wish2', 'Wish2', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('wish2', null, ['class' => 'form-control']) !!}
+        {!! Form::text('wish2', null, array('placeholder'=>'to see' ), ['class' => 'form-control']) !!}
         {!! $errors->first('wish2', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('details') ? 'has-error' : ''}}">
     {!! Form::label('wish3', 'Wish3', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('wish3', null, ['class' => 'form-control']) !!}
+        {!! Form::text('wish3', null, array('placeholder'=>'to go' ), ['class' => 'form-control']) !!}
         {!! $errors->first('wish3', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

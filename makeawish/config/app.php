@@ -166,6 +166,7 @@ return [
     // For crud generator & html
     Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
     Collective\Html\HtmlServiceProvider::class,
+        Dawson\Youtube\YoutubeServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
            'Form' => Collective\Html\FormFacade::class,
     'HTML' => Collective\Html\HtmlFacade::class,
+        'Youtube' => Dawson\Youtube\Facades\Youtube::class,
 
     ],
 
