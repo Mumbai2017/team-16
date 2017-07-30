@@ -13,16 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".viewReferral">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".viewReferral"></activity>
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
         <activity android:name=".UploadAMemory" />
@@ -37,13 +29,19 @@
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
         <activity android:name=".Registration" />
-        <activity android:name=".homescreen" >
+        <activity android:name=".homescreen">
 
-            </activity>
-        <activity android:name=".anonDonor">
         </activity>
-        <activity android:name=".profile"/>
-        <activity android:name=".AdminPanel"></activity>
+        <activity android:name=".anonDonor"></activity>
+        <activity android:name=".profile" />
+        <activity android:name=".AdminPanel" />
+        <activity android:name=".IdentifyWish">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
