@@ -41,7 +41,7 @@ EditText wish1,wish2, wish3;
                 }
                 else
                 {
-                    registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
+                   // registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
                     Intent intent=new Intent(IdentifyWish.this, homescreen.class);
                     startActivity(intent);
                 }

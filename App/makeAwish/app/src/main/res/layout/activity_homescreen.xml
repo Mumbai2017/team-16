@@ -11,7 +11,7 @@
         android:id="@+id/wlcomeText"
         android:layout_width="153dp"
         android:layout_height="40dp"
-        android:text="TextView"
+        android:text="Welcome"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="100dp"
         android:textAlignment="center"

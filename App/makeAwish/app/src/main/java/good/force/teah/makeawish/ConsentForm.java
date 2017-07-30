@@ -60,7 +60,7 @@ boolean flag=false;
                 }
                 else
                 {
-registerUser(parentName.getText().toString(),formExplainedBy.getText().toString(),witness.getText().toString());
+//registerUser(parentName.getText().toString(),formExplainedBy.getText().toString(),witness.getText().toString());
 
                     Intent intent= new Intent(ConsentForm.this, IdentifyWish.class);
                     startActivity(intent);

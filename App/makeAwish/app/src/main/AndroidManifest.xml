@@ -39,6 +39,7 @@
         <activity android:name=".addReferral" />
         <activity android:name=".profile" />
         <activity android:name=".VolunteerHomeScreen"></activity>
+        <activity android:name=".IdentifyWish"></activity>
     </application>
 
 </manifest>
