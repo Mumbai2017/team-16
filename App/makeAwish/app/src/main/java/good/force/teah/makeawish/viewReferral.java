@@ -10,15 +10,14 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import good.force.teah.makeawish.Data.WishData;
+/*
 import good.force.teah.makeawish.Data.wish;
 import good.force.teah.makeawish.Data.wishAdapter;
 
 public class viewReferral extends AppCompatActivity {
 
     private List<wish> wishList = new ArrayList<>();
-    private RecyclerView recView;
+    private RecyclerView recyclerView;
     private wishAdapter mAdapter;
 
     @Override
@@ -27,14 +26,19 @@ public class viewReferral extends AppCompatActivity {
         setContentView(R.layout.activity_view_referral);
         Intent intent = getIntent();
 
-        recView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
+        mAdapter = new wishAdapter(wishList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
 
-        recView.setLayoutManager(new LinearLayoutManager(this));
-
-        mAdapter=new wishAdapter(WishData.getListData(),this);
-        recView.setAdapter(mAdapter);
+        prepareWishData();
     }
 
+    private void prepareWishData() {
 
+    }
 }
+*/

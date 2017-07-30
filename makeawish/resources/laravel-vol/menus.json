@@ -1,0 +1,18 @@
+{
+   "menus":[
+      {
+         "section":"Wish",
+         "items":[
+            {
+               "title":"Add Wish",
+               "url":"\/frontend\/wishs"
+            },
+             {
+               "title":"View Children",
+               "url":"\/frontend\/childs"
+            }
+         ]
+      }
+      
+   ]
+}

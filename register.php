@@ -23,9 +23,9 @@ include 'connect.php';
         echo json_encode($return);	
 		exit;
 	}
-	$query = "INSERT INTO person(aadhar_id,username,password,type_doctor,type_donor,
+	$query = "INSERT INTO person(aadhar_id,password,type_doctor,type_donor,
 	type_volunteer) 
-	VALUES($aadhar_id,'$username','$password',$type_doctor,$type_donor,$type_volunteer)";
+	VALUES($aadhar_id,'$password',$type_doctor,$type_donor,$type_volunteer)";
 	$response = @mysqli_query($conn, $query);
 	if($response){
 		$return["Status"] = "Success";
