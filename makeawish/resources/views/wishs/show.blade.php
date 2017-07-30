@@ -39,7 +39,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $wish->id }}</td>
                                     </tr>
-                                    <tr><th> Name </th><td> {{ $wish->name }} </td></tr><tr><th> Details </th><td> {{ $wish->details }} </td></tr>
+                                    <tr><th> Name </th><td> {{ $wish->name }} </td></tr><tr><th> Details </th><td> {{ $wish->details }} </td></tr><tr><th> Wish1 </th><td> {{ $wish->wish1 }} </td></tr><tr><th> Wish2 </th><td> {{ $wish->wish2 }} </td></tr><tr><th> Wish3 </th><td> {{ $wish->wish3 }} </td></tr>
                                 </tbody>
                             </table>
                         </div>
