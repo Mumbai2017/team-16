@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +19,6 @@ public class Registration extends AppCompatActivity {
     private TextView name,dateOfBirth;
     private Button submit,pickDate;
     private int mYear, mMonth, mDay;
-
 
 
     @Override

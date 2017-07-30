@@ -38,6 +38,7 @@
         <activity android:name=".homescreen" />
         <activity android:name=".anonDonor">
         </activity>
+        <activity android:name=".addReferral"/>
         <activity android:name=".profile"/>
     </application>
 

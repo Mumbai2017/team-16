@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -46,10 +47,12 @@ public class SignUpFragment extends Fragment {
     private String mParam2;
     private EditText email,password;
     private Button login;
+    private CheckBox dcotor,volunteer,donor;
 
     private OnFragmentInteractionListener mListener;
     Button signup;
     private good.force.teah.makeawish.Data.DataHandler db;
+    int doc, vol, don;
     public SignUpFragment() {
         // Required empty public constructor
     }
@@ -90,13 +93,45 @@ public class SignUpFragment extends Fragment {
         email = (EditText) view.findViewById(R.id.editText3);
         password = (EditText) view.findViewById(R.id.editText4);
         login = (Button) view.findViewById(R.id.btn_sign);
+        dcotor  = (CheckBox) view.findViewById(R.id.checkBox2);
+        volunteer = (CheckBox) view.findViewById(R.id.checkBox3);
+        donor = (CheckBox) view.findViewById(R.id.checkBox4);
+        dcotor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(dcotor.isChecked())
+                    doc= 1;
+                else
+                    doc=0;
+            }
+        });
+        volunteer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(volunteer.isChecked())
+                    vol= 1;
+                else
+                    vol=0;
+            }
+        });
+        donor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(donor.isChecked())
+                    don= 1;
+                else
+                    don=0;
+            }
+        });
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String em = email.getText().toString().trim();
                 String pass = password.getText().toString().trim();
                 if (!em.isEmpty() && !pass.isEmpty()) {
-                    registerUser(em, pass);
+                    registerUser(em, pass, doc,vol,don);
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getContext(),
@@ -148,7 +183,7 @@ public class SignUpFragment extends Fragment {
     }
 
     private void registerUser(final String email,
-                              final String password) {
+                              final String password, final int doc,final int vol,final int don) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
@@ -202,6 +237,9 @@ public class SignUpFragment extends Fragment {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("email", email);
                 params.put("password", password);
+                params.put("doctor",Integer.toString(doc));
+                params.put("volunteer",Integer.toString(vol));
+                params.put("donor",Integer.toString(don));
                 return params;
             }
 
