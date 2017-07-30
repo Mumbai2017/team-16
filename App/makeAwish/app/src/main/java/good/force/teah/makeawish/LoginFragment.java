@@ -193,7 +193,7 @@ public class LoginFragment extends Fragment {
                         // Now store the user in SQLite
 
                        String uid = jObj.getString("aadhar_id");
-                    //String
+                       String username = jObj.getString("username");
                        Log.d("response",uid);
 
                       /*  JSONObject user = jObj.getJSONObject("username");
