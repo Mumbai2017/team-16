@@ -71,10 +71,5 @@ public class homescreen extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
 }

@@ -221,9 +221,8 @@ public class LoginFragment extends Fragment {
 
                         // Inserting row in users table
                      //   db.addUser(name, email, uid, created_at);
-                    String keyIdentifer  = "SignUp";
                     Intent intent = new Intent(getContext(),homescreen.class);
-                    intent.putExtra("strName", keyIdentifer );
+                    intent.putExtra("uid", uid );
                         LoginFragment.this.startActivity(intent);
                         //getActivity().getFragmentManager().popBackStack();
                    /* } else {
