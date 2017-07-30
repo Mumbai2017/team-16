@@ -15,13 +15,11 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".ConsentForm" />
         <activity android:name=".ReferralForm" />
@@ -37,14 +35,10 @@
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
         <activity android:name=".Registration" />
-        <activity android:name=".homescreen" >
-
-        </activity>
+        <activity android:name=".homescreen" />
         <activity android:name=".anonDonor">
         </activity>
-        <activity android:name=".profile">
-
-        </activity>
+        <activity android:name=".profile"/>
     </application>
 
 </manifest>

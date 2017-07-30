@@ -42,7 +42,7 @@
         android:textSize="13sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:gravity="top"
         android:text="We, the parent(s)/ legal guardian(s)of other minor participants, if any, and other adult participants, if any, acknowledge reading, understanding and agreeing to give our consent to condition mentioned." />
 
     <EditText

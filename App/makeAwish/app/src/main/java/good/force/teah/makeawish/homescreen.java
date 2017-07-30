@@ -13,13 +13,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import static good.force.teah.makeawish.R.styleable.View;
 
 public class homescreen extends AppCompatActivity {
 
-    ImageButton viewProfile, viewReferrals , addReferrals, faq, calender;
+    LinearLayout viewProfile, viewReferrals , addReferrals, faq, calender;
     EditText hey;
 
     @Override
@@ -27,11 +28,11 @@ public class homescreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-        viewProfile = (ImageButton)findViewById(R.id.button_profile);
-        viewReferrals = (ImageButton)findViewById(R.id.button_view_refferal);
-        addReferrals = (ImageButton)findViewById(R.id.button_add_refferal);
-        faq = (ImageButton)findViewById(R.id.button_faq);
-        calender = (ImageButton)findViewById(R.id.button_calender);
+        viewProfile = (LinearLayout)findViewById(R.id.button_profile);
+        viewReferrals = (LinearLayout)findViewById(R.id.button_view_refferal);
+        addReferrals = (LinearLayout)findViewById(R.id.button_add_refferal);
+        faq = (LinearLayout)findViewById(R.id.button_faq);
+        calender = (LinearLayout)findViewById(R.id.button_calender);
 
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
