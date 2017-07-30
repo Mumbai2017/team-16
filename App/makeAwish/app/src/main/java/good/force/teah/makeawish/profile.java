@@ -111,7 +111,9 @@ class mySyncTask extends AsyncTask<String, Void, ArrayList>
                 BufferedReader reader=new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 JSONObject jsonObject=new JSONObject(reader.readLine());
                 JSONArray jsonArray=jsonObject.getJSONArray("data");
-                Log.i("BLAH",jsonArray.getJSONObject(0).get("practices").toString());
+                JSONArray jsonArray1=jsonArray.getJSONObject(0).getJSONArray("practices");
+                JSONObject jsonObject2 = jsonArray1.getJSONObject(0);
+                Log.i("BLAH111",jsonObject2.get("name").toString());
                 Log.i("BLAH",jsonArray.toString());
 
                 if (index!=null)
@@ -121,7 +123,9 @@ class mySyncTask extends AsyncTask<String, Void, ArrayList>
 
                 Log.i("blah",jsonArray.toString());
 
-                list.add(jsonArray.getJSONObject(0).get("practices").toString());
+              // JSONArray jsonObject1 = jsonArray.getJSONObject(0).get("practices");
+
+                list.add(jsonObject2.get("name").toString());
                 //list.add(jsonArray.getJSONObject(0).get("lat").toString());
                 //list.add(jsonArray.getJSONObject(0).get("ParaContractTeachersMale").toString());
                 //list.add(jsonArray.getJSONObject(0).get("ParaContractTeachersFemale").toString());

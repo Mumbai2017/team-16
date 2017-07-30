@@ -38,7 +38,9 @@
         <activity android:name=".homescreen" />
         <activity android:name=".anonDonor">
         </activity>
-        <activity android:name=".profile"/>
+        <activity android:name=".profile">
+
+        </activity>
     </application>
 
 </manifest>
