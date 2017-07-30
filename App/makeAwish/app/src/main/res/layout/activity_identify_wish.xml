@@ -62,6 +62,8 @@
         android:scrollbarStyle="insideInset"
         android:scrollbars="vertical"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+
     <Button
         android:id="@+id/submit"
         android:layout_margin="10dp"
