@@ -60,7 +60,7 @@ public class profile extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-        //blah.setText(xlist.toString());
+       // blah.setText(xlist.toString());
        // bundle.putStringArrayList("list",xlist);
 
 

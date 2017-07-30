@@ -17,11 +17,12 @@ include 'connect.php';
 	$consent_by = $data['consent_by'];
 	$witness = $data['witness'];
 	$photo_url = $POST['photo_url'];
+	$status = "Referred";
 	$query = "INSERT INTO child(aadhar_id,hospital_name,case_no,gender,
-	mother_tongue,education,fathers_name,mothers_name,guardian,siblings,illness,parent_consent,consent_by,witness,photo_url) 
+	mother_tongue,education,fathers_name,mothers_name,guardian,siblings,illness,parent_consent,consent_by,witness,photo_url,status) 
 	VALUES('$aadhar_id','$hospital_name','$case_no','$gender',
 	'$mother_tongue','$education','$fathers_name','$mothers_name',
-	'$guardian','$siblings','$illness','$parent_consent','$consent_by','$witness','$photo_url')";
+	'$guardian','$siblings','$illness','$parent_consent','$consent_by','$witness','$photo_url','$status')";
 	$response = @mysqli_query($conn, $query);
 	if($response)
 	    echo '{"Status":"Inserted"}';
