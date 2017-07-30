@@ -48,7 +48,7 @@ public class profile extends AppCompatActivity {
         {
             xlist = syncTask.get();
             //if(xlist!=null)
-            Log.i("xlist",xlist.toString());
+           // Log.i("xlist",xlist.toString());
             //else
             //  Toast.makeText(this,"Error,xlist is empty",Toast.LENGTH_LONG);
         }
@@ -60,7 +60,7 @@ public class profile extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-        blah.setText(xlist.toString());
+        //blah.setText(xlist.toString());
        // bundle.putStringArrayList("list",xlist);
 
 

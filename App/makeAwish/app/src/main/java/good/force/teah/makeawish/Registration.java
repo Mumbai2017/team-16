@@ -24,11 +24,11 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        name = (EditText)findViewById(R.id.name);
+       // name = (EditText)findViewById(R.id.na);
         aadhar = (EditText)findViewById(R.id.aadhar);
-        dateOfBirth = (EditText)findViewById(R.id.dateOfBirth);
+        /*dateOfBirth = (EditText)findViewById(R.id.dateOfBirth);
         submit = (Button)findViewById(R.id.button_submit);
-        pickDate = (Button) findViewById(R.id.button_pickDate);
+        pickDate = (Button) findViewById(R.id.button_pickDate);*/
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
