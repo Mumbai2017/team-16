@@ -1,5 +1,6 @@
 package good.force.teah.makeawish;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +42,8 @@ EditText wish1,wish2, wish3;
                 else
                 {
                     registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
-
+                    Intent intent=new Intent(IdentifyWish.this, homescreen.class);
+                    startActivity(intent);
                 }
             }
         });
