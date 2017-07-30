@@ -15,7 +15,8 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="100dp"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textStyle="italic"
+        android:textSize="35sp"
 
         />
     <LinearLayout

@@ -44,6 +44,7 @@ EditText wish1,wish2, wish3;
                    // registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
                     Intent intent=new Intent(IdentifyWish.this, homescreen.class);
                     startActivity(intent);
+                    Toast.makeText(getApplicationContext(),"Wishes uploaded successfully",Toast.LENGTH_LONG).show();
                 }
             }
         });
