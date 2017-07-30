@@ -118,7 +118,7 @@ public class ReferralForm extends AppCompatActivity {
                 params.put("illness", illness);
                 params.put("notes", notes);
 
-                
+
                 return params;
             }
 
