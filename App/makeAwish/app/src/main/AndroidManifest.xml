@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".viewReferral">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +38,9 @@
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
         <activity android:name=".Registration" />
-        <activity android:name=".homescreen" />
+        <activity android:name=".homescreen" >
+
+            </activity>
         <activity android:name=".anonDonor">
         </activity>
         <activity android:name=".profile"/>

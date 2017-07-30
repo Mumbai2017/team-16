@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import good.force.teah.makeawish.R;
-/*
+
 public class wishAdapter extends RecyclerView.Adapter<wishAdapter.MyViewHolder> {
 
     private List<wish> listData;
@@ -71,4 +71,3 @@ public class wishAdapter extends RecyclerView.Adapter<wishAdapter.MyViewHolder> 
     }
     }
 
-*/
