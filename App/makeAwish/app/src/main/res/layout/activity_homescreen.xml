@@ -109,7 +109,7 @@
             android:layout_margin="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_question_answer_black_24dp"
+            android:background="@drawable/ic_search_black_24dp"
             />
 
         <TextView
@@ -117,7 +117,7 @@
             android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FAQ"
+            android:text="Search for Wishes"
             android:textSize="25sp"
            />
 
@@ -137,7 +137,7 @@
             android:layout_margin="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_perm_contact_calendar_black_24dp"
+            android:background="@drawable/ic_monetization_on_black_24dp"
            />
 
         <TextView
@@ -145,7 +145,7 @@
             android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calendar"
+            android:text="Donation"
             android:textSize="25sp"
            />
     </LinearLayout>

@@ -22,7 +22,7 @@ import static good.force.teah.makeawish.R.styleable.View;
 
 public class homescreen extends AppCompatActivity {
 Bundle bundle;
-    LinearLayout viewProfile, viewReferrals , addReferrals, faq, calender;
+    LinearLayout viewProfile, viewReferrals , addReferrals, search, donation;
     EditText hey;
 
     @Override
@@ -33,8 +33,8 @@ Bundle bundle;
         viewProfile = (LinearLayout)findViewById(R.id.button_profile);
         viewReferrals = (LinearLayout)findViewById(R.id.button_view_refferal);
         addReferrals = (LinearLayout)findViewById(R.id.button_add_refferal);
-        faq = (LinearLayout)findViewById(R.id.button_faq);
-        calender = (LinearLayout)findViewById(R.id.button_calender);
+        search = (LinearLayout)findViewById(R.id.button_faq);
+        donation= (LinearLayout)findViewById(R.id.button_calender);
 
         String uid= bundle.getString("uid");
 
@@ -65,8 +65,15 @@ Bundle bundle;
 
             }
         });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        calender.setOnClickListener(new View.OnClickListener() {
+                Intent intent = new Intent(homescreen.this, AdminPanel.class);
+                startActivity(intent);
+            }
+        });
+        donation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -90,6 +97,7 @@ Bundle bundle;
                 //Kill the app
                 System.exit(0);
                 return true;
+            case R.id.menu_volunteer:
 
             default:
                 return super.onOptionsItemSelected(item);
