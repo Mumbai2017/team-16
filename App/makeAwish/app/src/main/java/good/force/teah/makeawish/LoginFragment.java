@@ -100,7 +100,7 @@ public class LoginFragment extends Fragment {
         emailField=(EditText)view.findViewById(R.id.email);
         passwordField=(EditText)view.findViewById(R.id.password);
         buttonLogin=(Button)view.findViewById(R.id.login);
-        resetPassword=(TextView)view.findViewById(R.id.password_reset);
+        //resetPassword=(TextView)view.findViewById(R.id.password_reset);
         // Progress dialog
         pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);

@@ -13,13 +13,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
 
+
+        </activity>
+        <activity android:name=".ConsentForm" />
+        <activity android:name=".viewReferral" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ConsentForm" />
+            </activity>
         <activity android:name=".ReferralForm" />
         <activity android:name=".UploadAMemory"></activity>
         <activity android:name=".WishGrantingForm" />

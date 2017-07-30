@@ -23,7 +23,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
+/*
         name = (EditText)findViewById(R.id.name);
         aadhar = (EditText)findViewById(R.id.aadhar);
         dateOfBirth = (EditText)findViewById(R.id.dateOfBirth);
@@ -61,6 +61,6 @@ public class Registration extends AppCompatActivity {
             }
         });
 
-
+*/
     }
 }
