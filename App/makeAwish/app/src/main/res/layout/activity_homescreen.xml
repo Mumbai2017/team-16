@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:background="#eee"
         android:orientation="horizontal"
-
+        android:elevation="3dp"
         android:layout_height="70dp">
 
         <ImageButton
@@ -47,13 +47,14 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/button_add_refferal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_below="@+id/button_profile"
         android:layout_width="match_parent"
         android:background="#eee"
         android:orientation="horizontal"
+        android:elevation="3dp"
         android:layout_height="70dp">
         <ImageButton
             android:layout_margin="15sp"
@@ -78,6 +79,7 @@
         android:layout_below="@+id/button_add_refferal"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
         <ImageButton
@@ -104,6 +106,7 @@
         android:layout_below="@+id/button_view_refferal"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
         <ImageButton
@@ -131,6 +134,7 @@
         android:layout_below="@+id/button_faq"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
 
