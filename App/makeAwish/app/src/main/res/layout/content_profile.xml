@@ -9,48 +9,117 @@
     tools:showIn="@layout/activity_profile">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="86dp" />
+
+    <TextView
+        android:id="@+id/lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location : lat"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="190dp" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/insti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Institution"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="310dp" />
+
+    <TextView
+        android:id="@+id/aadhar"
+        android:layout_width="84dp"
+        android:layout_height="40dp"
+        android:text="aadhar"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <TextView
+        android:id="@+id/lon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location : lon"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <TextView
+        android:id="@+id/aadharText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="38dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="92dp" /><![CDATA[
+
+    20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="136dp" />
+
+    ]]>
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/ageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="75dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="145dp" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/latText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="75dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="190dp" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/lonText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="115dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <TextView
+        android:id="@+id/instText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="310dp" />
+
 </android.support.constraint.ConstraintLayout>

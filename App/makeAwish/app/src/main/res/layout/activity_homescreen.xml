@@ -11,11 +11,12 @@
         android:id="@+id/wlcomeText"
         android:layout_width="153dp"
         android:layout_height="40dp"
-        android:text="TextView"
+        android:text="Welcome"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="100dp"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textStyle="italic"
+        android:textSize="35sp"
 
         />
     <LinearLayout
@@ -25,7 +26,7 @@
         android:layout_width="match_parent"
         android:background="#eee"
         android:orientation="horizontal"
-
+        android:elevation="3dp"
         android:layout_height="70dp">
 
         <ImageButton
@@ -46,13 +47,14 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/button_add_refferal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_below="@+id/button_profile"
         android:layout_width="match_parent"
         android:background="#eee"
         android:orientation="horizontal"
+        android:elevation="3dp"
         android:layout_height="70dp">
         <ImageButton
             android:layout_margin="15sp"
@@ -77,6 +79,7 @@
         android:layout_below="@+id/button_add_refferal"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
         <ImageButton
@@ -103,13 +106,14 @@
         android:layout_below="@+id/button_view_refferal"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
         <ImageButton
             android:layout_margin="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_question_answer_black_24dp"
+            android:background="@drawable/ic_search_black_24dp"
             />
 
         <TextView
@@ -117,7 +121,7 @@
             android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FAQ"
+            android:text="Search for Wishes"
             android:textSize="25sp"
            />
 
@@ -130,6 +134,7 @@
         android:layout_below="@+id/button_faq"
         android:layout_width="match_parent"
         android:background="#eee"
+        android:elevation="3dp"
         android:orientation="horizontal"
         android:layout_height="70dp">
 
@@ -137,7 +142,7 @@
             android:layout_margin="15sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_perm_contact_calendar_black_24dp"
+            android:background="@drawable/ic_monetization_on_black_24dp"
            />
 
         <TextView
@@ -145,7 +150,7 @@
             android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calendar"
+            android:text="Donation"
             android:textSize="25sp"
            />
     </LinearLayout>

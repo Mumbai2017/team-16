@@ -1,10 +1,9 @@
 package good.force.teah.makeawish;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,56 +18,39 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import android.content.Intent;
-public class ConsentForm extends AppCompatActivity {
-EditText parentName,  formExplainedBy, witness;
-CheckBox checkBox;
-boolean flag=false;
-    Button approve;
+
+public class IdentifyWish extends AppCompatActivity {
+EditText wish1,wish2, wish3;
+    Button submit;
     private good.force.teah.makeawish.Data.DataHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consent_form);
+        setContentView(R.layout.activity_identify_wish);
 
-        parentName=(EditText)findViewById(R.id.editText);
-        formExplainedBy=(EditText)findViewById(R.id.editText2);
-        witness=(EditText)findViewById(R.id.editText3);
-        approve=(Button)findViewById(R.id.approveButton);
-        checkBox=(CheckBox)findViewById(R.id.checkBox);
-        checkBox.setOnClickListener(new View.OnClickListener() {
+        wish1=(EditText) findViewById(R.id.wish1);
+        wish2=(EditText) findViewById(R.id.wish2);
+        wish3=(EditText) findViewById(R.id.wish3);
+        submit=(Button) findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(flag==false)
+                if(wish1.getText().toString().length()==0 || wish2.getText().toString().length()==0 || wish3.getText().toString().length()==0 )
                 {
-                    approve.setEnabled(true);
-                    flag=true;
+                    Toast.makeText(getApplicationContext(),"Please enter all details",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
-                    approve.setEnabled(false);
-                    flag=false;
-                }
-            }
-        });
-        approve.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(parentName.getText().toString().length()==0 || formExplainedBy.getText().toString().length()==0 || witness.getText().toString().length()==0)
-                {
-                    Toast.makeText(getApplicationContext(),"Please enter all the values",Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-//registerUser(parentName.getText().toString(),formExplainedBy.getText().toString(),witness.getText().toString());
-
-                    Intent intent= new Intent(ConsentForm.this, IdentifyWish.class);
+                   // registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
+                    Intent intent=new Intent(IdentifyWish.this, homescreen.class);
                     startActivity(intent);
+                    Toast.makeText(getApplicationContext(),"Wishes uploaded successfully",Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
-    private void registerUser(final String pName, final String expBy, final String witness){ // Tag used to cancel the request
+
+    private void registerUser(final String wish1, final String wish2, final String wish3){ // Tag used to cancel the request
         String tag_string_req = "req_register";
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -95,10 +77,10 @@ boolean flag=false;
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
-                        Toast.makeText(ConsentForm.this, "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(IdentifyWish.this, "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
                     } else {
                         String errorMsg = jObj.getString("error_msg");
-                        Toast.makeText(ConsentForm.this,
+                        Toast.makeText(IdentifyWish.this,
                                 errorMsg, Toast.LENGTH_LONG).show();
                     }
                 } catch (JSONException e) {
@@ -111,7 +93,7 @@ boolean flag=false;
             @Override
             public void onErrorResponse(VolleyError error) {
                 //Log.e(TAG, "Registration Error: " + error.getMessage());
-                Toast.makeText(ConsentForm.this,
+                Toast.makeText(IdentifyWish.this,
                         error.getMessage(), Toast.LENGTH_LONG).show();
             }
         }) {
@@ -119,9 +101,9 @@ boolean flag=false;
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("parentName", pName);
-                params.put("explainedBy", expBy);
-                params.put("witness", witness);
+                params.put("wish1", wish1);
+                params.put("wish2", wish2);
+                params.put("wish3", wish3);
 
 
                 return params;

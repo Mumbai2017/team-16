@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity implements LoginFragment.OnFragmentInteractionListener, SignUpFragment.OnFragmentInteractionListener{
@@ -17,6 +18,7 @@ public class Login extends AppCompatActivity implements LoginFragment.OnFragment
     String fragment_change;
     Fragment fragment = null;
     Class fragmentClass;
+
     int flag=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class Login extends AppCompatActivity implements LoginFragment.OnFragment
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
+
 
         fragment_change = bundle.getString("strName");
         Log.d("Fragment opening",fragment_change);

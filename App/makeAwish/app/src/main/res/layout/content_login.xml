@@ -16,14 +16,4 @@ tools:context="good.force.teah.makeawish.Login">
     android:id="@+id/frameLayout">
 </FrameLayout>
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Don&apos;t have an account? Sign up."
-    android:id="@+id/textView2"
-    android:textAlignment="center"
-    android:textSize="20dp"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true" />
-
 </RelativeLayout>
