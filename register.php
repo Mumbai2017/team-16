@@ -1,17 +1,17 @@
 <?php
 include 'connect.php';
 	$conn = connect();
-	$data = json_decode('personinsert');
-	$aadhar_id = (int)$data['aadhar_id'];
-	$password = $data['password'];
+	//$_POST = json_decode('personinsert');
+	$aadhar_id = (int)$_POST['email'];
+	$password = $_POST['password'];
 	if($password == NULL || $password == ""){
 		$return["Status"] = "Please enter a password";
         echo json_encode($return);	
 		exit;
 	}
-	$type_doctor = $data['type_doctor'];
-	$type_volunteer = $data['type_volunteer'];
-	$type_donor = $data['type_donor'];
+	$type_doctor = 0;//(int)$_POST['type_doctor'];
+	$type_volunteer = 0;//(int)$_POST['type_volunteer'];
+	$type_donor = 0;//(int)$_POST['type_donor'];
 	$query = "SELECT name FROM aadhar WHERE aadhar_id=$aadhar_id";
 	$response = @mysqli_query($conn, $query);
 	if($response){
@@ -33,5 +33,4 @@ include 'connect.php';
 	}  
 	else
 		echo mysqli_error($conn);
-}
 ?>

@@ -74,7 +74,7 @@ PRIMARY KEY (id_child_donor)
 );
 
 CREATE TABLE IF NOT EXISTS child_doctor (
-id_child_doctor INTEGER NOT NULL,
+id_child_doctor INTEGER NOT NULL AUTO_INCREMENT,
 aadhar_id_child INTEGER(12) NOT NULL references child(aadhar_id),
 aadhar_id_person INTEGER(12) NOT NULL references person(aadhar_id),
 PRIMARY KEY (id_child_doctor)
