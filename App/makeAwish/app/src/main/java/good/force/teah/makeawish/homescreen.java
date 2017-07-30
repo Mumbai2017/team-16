@@ -65,7 +65,7 @@ public class homescreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(homescreen.this, calender.class);
+                Intent intent = new Intent(homescreen.this, AdminPanel.class);
                 startActivity(intent);
             }
         });

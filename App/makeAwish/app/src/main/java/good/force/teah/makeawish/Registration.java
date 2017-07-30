@@ -29,9 +29,9 @@ public class Registration extends AppCompatActivity {
         name = (TextView)findViewById(R.id.name);
         aadhar = (EditText)findViewById(R.id.aadhar);
         dateOfBirth = (TextView)findViewById(R.id.dob);
-        submit = (Button)findViewById(R.id.register);
+       // submit = (Button)findViewById(R.id.register);
        // pickDate = (Button) findViewById(R.id.button_pickDate);
-
+/*
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +62,7 @@ public class Registration extends AppCompatActivity {
 
             }
         });
-
+*/
 
     }
 }

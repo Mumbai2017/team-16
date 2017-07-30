@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,6 +60,7 @@ public class LoginFragment extends Fragment {
     private good.force.teah.makeawish.ConnectionManager.Session session;
     private EditText emailField,passwordField;
     private Button buttonLogin;
+    private Button btn_signUp;
     private TextView resetPassword;
     private ProgressDialog pDialog;
     private good.force.teah.makeawish.Data.DataHandler db;
@@ -105,6 +108,7 @@ public class LoginFragment extends Fragment {
         // Progress dialog
         pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);
+        btn_signUp = (Button) view.findViewById(R.id.btn_signUp);
 
         // SQLite database handler
         db = new good.force.teah.makeawish.Data.DataHandler(getContext());
@@ -133,6 +137,19 @@ public class LoginFragment extends Fragment {
                 }
 
 
+            }
+        });
+        btn_signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent intent = new Intent(getActivity(), S.class);
+                startActivity(intent);
+                getActivity().getFragmentManager().popBackStack();*/
+
+                String keyIdentifer  = "SignUp";
+                Intent i = new Intent(getContext(), Login.class);
+                i.putExtra("strName", keyIdentifer );
+                startActivity(i);
             }
         });
 
