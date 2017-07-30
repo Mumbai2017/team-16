@@ -33,8 +33,8 @@
         <activity android:name=".UploadAMemory" />
         <activity android:name=".WishGrantingForm" />
         <activity android:name=".Registration" />
-        <activity android:name=".homescreen"/>
-        <activity android:name=".anonDonor"/>
+        <activity android:name=".homescreen" />
+        <activity android:name=".anonDonor" />
         <activity android:name=".addReferral" />
         <activity android:name=".profile" />
         <activity android:name=".VolunteerHomeScreen" />

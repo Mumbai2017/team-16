@@ -24,7 +24,7 @@ public class homescreen extends AppCompatActivity {
     private Bundle bundle;
     private LinearLayout viewProfile, viewReferrals, addReferrals, search, donation;
     private EditText hey;
-    private good.force.teah.makeawish.ConnectionManager.Session session;
+    //private good.force.teah.makeawish.ConnectionManager.Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class homescreen extends AppCompatActivity {
         setContentView(R.layout.activity_homescreen);
         // Session manager
 
-        session = new good.force.teah.makeawish.ConnectionManager.Session(getApplicationContext());
+        //session = new good.force.teah.makeawish.ConnectionManager.Session(getApplicationContext());
         viewProfile = (LinearLayout) findViewById(R.id.button_profile);
         viewReferrals = (LinearLayout) findViewById(R.id.button_view_refferal);
         addReferrals = (LinearLayout) findViewById(R.id.button_add_refferal);
@@ -115,7 +115,7 @@ public class homescreen extends AppCompatActivity {
                 return true;
             }
             case R.id.menu_logout: {
-                session.setLogin(true);
+                //session.setLogin(false);
                 System.exit(0);
                 return true;
             }
