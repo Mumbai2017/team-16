@@ -49,8 +49,8 @@ public class ReferralForm extends AppCompatActivity {
         });
     }
 
-    private void registerUser(String email, String caseNo,String hospitalName,
-                              String password) {
+    private void registerUser(final String email,final String caseNo,final String hospitalName,
+                              final String password) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
