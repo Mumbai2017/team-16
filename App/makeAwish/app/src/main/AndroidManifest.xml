@@ -35,7 +35,10 @@
                 android:value="good.force.teah.makeawish.MainActivity" />
         </activity>
         <activity android:name=".Registration" />
-        <activity android:name=".anonDonor"></activity>
+        <activity android:name=".homescreen" />
+        <activity android:name=".anonDonor">
+        </activity>
+        <activity android:name=".profile"/>
     </application>
 
 </manifest>

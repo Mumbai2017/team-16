@@ -192,8 +192,10 @@ public class LoginFragment extends Fragment {
 
                         // Now store the user in SQLite
 
-                       // String uid = jObj.getString("aadhar_id");
-                        //Log.d("response",uid);
+                       String uid = jObj.getString("aadhar_id");
+                    //String
+                       Log.d("response",uid);
+
                       /*  JSONObject user = jObj.getJSONObject("username");
                         String name = user.getString("doctor");
                         String email = user.getString("volunteer");
@@ -202,9 +204,10 @@ public class LoginFragment extends Fragment {
 
                         // Inserting row in users table
                      //   db.addUser(name, email, uid, created_at);
-
-                        Intent intent = new Intent(getActivity(),homescreen.class);
-                        startActivity(intent);
+                    String keyIdentifer  = "SignUp";
+                    Intent intent = new Intent(getContext(),homescreen.class);
+                    intent.putExtra("strName", keyIdentifer );
+                        LoginFragment.this.startActivity(intent);
                         //getActivity().getFragmentManager().popBackStack();
                    /* } else {
                         // Error in login. Get the error message
