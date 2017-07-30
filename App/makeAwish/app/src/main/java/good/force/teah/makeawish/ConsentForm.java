@@ -19,7 +19,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import android.content.Intent;
 public class ConsentForm extends AppCompatActivity {
 EditText parentName,  formExplainedBy, witness;
 CheckBox checkBox;
@@ -61,6 +61,9 @@ boolean flag=false;
                 else
                 {
 registerUser(parentName.getText().toString(),formExplainedBy.getText().toString(),witness.getText().toString());
+
+                    Intent intent= new Intent(ConsentForm.this, IdentifyWish.class);
+                    startActivity(intent);
                 }
             }
         });
