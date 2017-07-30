@@ -12,7 +12,7 @@ import com.android.volley.toolbox.Volley;
  * Created by Anurag on 7/29/2017.
  */
 
-public class App  extends Application {
+public class App extends Application {
 
     public static final String TAG = "App";
 

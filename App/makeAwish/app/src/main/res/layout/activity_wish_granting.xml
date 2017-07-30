@@ -35,8 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chid's Parent"
-        tools:layout_editor_absoluteY="67dp"
-        tools:layout_editor_absoluteX="141dp" />
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="67dp" />
 
     <TextView
         android:id="@+id/text_contact"

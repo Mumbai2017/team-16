@@ -1,86 +1,86 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_signUp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/layout_signUp"
     android:layout_margin="10sp"
+    android:orientation="vertical"
     tools:context="good.force.teah.makeawish.SignUpFragment">
 
     <TextView
-        android:layout_marginLeft="90sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="90sp"
         android:layout_marginTop="77dp"
         android:text="User Sign Up"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="25dp" />
 
-
-
     <EditText
-        android:layout_margin="20sp"
-        android:padding="10sp"
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20sp"
         android:ems="10"
+        android:hint="Aadhar No"
         android:inputType="number"
-        android:hint="Aadhar No" />
+        android:padding="10sp" />
+
     <EditText
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
-        android:padding="10sp"
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
-        android:hint="Password" />
+        android:padding="10sp" />
+
     <LinearLayout
-        android:layout_margin="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20sp"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" Type "
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <CheckBox
-            android:layout_marginLeft="30sp"
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="30sp"
             android:text="Doctor"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <CheckBox
-            android:layout_marginLeft="30sp"
-            android:textSize="20sp"
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Volunteer" />
+            android:layout_marginLeft="30sp"
+            android:text="Volunteer"
+            android:textSize="20sp" />
 
         <CheckBox
-            android:layout_marginLeft="30sp"
-            android:textSize="20sp"
             android:id="@+id/checkBox4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Donor" />
+            android:layout_marginLeft="30sp"
+            android:text="Donor"
+            android:textSize="20sp" />
     </LinearLayout>
 
-
     <Button
-        android:layout_marginLeft="40sp"
+        android:id="@+id/btn_sign"
         android:layout_width="250sp"
         android:layout_height="50sp"
-        android:id="@+id/btn_sign"
-        android:text="Register"/>
+        android:layout_marginLeft="40sp"
+        android:text="Register" />
 
 </LinearLayout>

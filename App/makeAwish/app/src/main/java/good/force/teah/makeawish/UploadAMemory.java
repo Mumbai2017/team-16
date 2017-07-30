@@ -11,7 +11,9 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
+
 import good.force.teah.makeawish.Config.config;
+
 public class UploadAMemory extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
@@ -26,12 +28,14 @@ public class UploadAMemory extends YouTubeBaseActivity implements YouTubePlayer.
 
         youTubeView.initialize(config.YOUTUBE_API_KEY, this);
     }
+
     @Override
     public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
         if (!wasRestored) {
             player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
         }
     }
+
     @Override
     public void onInitializationFailure(Provider provider, YouTubeInitializationResult errorReason) {
         if (errorReason.isUserRecoverableError()) {
@@ -41,6 +45,7 @@ public class UploadAMemory extends YouTubeBaseActivity implements YouTubePlayer.
             Toast.makeText(this, "some error", Toast.LENGTH_LONG).show();
         }
     }
+
     @Override
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

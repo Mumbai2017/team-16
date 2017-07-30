@@ -5,7 +5,7 @@ package good.force.teah.makeawish.Data;
  */
 
 public class Person {
-    String aadhar_id,password;
+    String aadhar_id, password;
     int typeDoctor, typeDonor, volunteer;
 
     public Person(String aadhar_id, String password, int typeDoctor, int typeDonor, int volunteer) {

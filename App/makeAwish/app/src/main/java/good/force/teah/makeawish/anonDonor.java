@@ -11,7 +11,6 @@ public class anonDonor extends AppCompatActivity {
         setContentView(R.layout.activity_anon_donor);
 
 
-
     }
 
 

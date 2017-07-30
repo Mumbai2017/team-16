@@ -13,14 +13,15 @@ import android.webkit.WebView;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnLogin,btnDonate;
+    private Button btnLogin, btnDonate;
     private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // setting up view
-        btnLogin =(Button) findViewById(R.id.button_login);
+        btnLogin = (Button) findViewById(R.id.button_login);
         btnDonate = (Button) findViewById(R.id.button_donate);
         webView = (WebView) findViewById(R.id.webview_main);
         //enabling javascript
@@ -34,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //TODO add Payment GateWay
-                String keyIdentifer  = "SignUp";
+                String keyIdentifer = "SignUp";
                 Intent i = new Intent(MainActivity.this, anonDonor.class);
-                i.putExtra("strName", keyIdentifer );
+                i.putExtra("strName", keyIdentifer);
                 startActivity(i);
-                Log.d("Login","Signing up....");
+                Log.d("Login", "Signing up....");
             }
         });
 
@@ -46,20 +47,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // go to the Login page
-                String keyIdentifer  = "Login";
+                String keyIdentifer = "Login";
                 Intent i = new Intent(MainActivity.this, Login.class);
-                i.putExtra("strName", keyIdentifer );
+                i.putExtra("strName", keyIdentifer);
                 startActivity(i);
             }
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection

@@ -21,15 +21,18 @@ import android.widget.ListView;
 import static good.force.teah.makeawish.R.styleable.View;
 
 public class homescreen extends AppCompatActivity {
-    Bundle bundle;
-    LinearLayout viewProfile, viewReferrals, addReferrals, search, donation;
-    EditText hey;
+    private Bundle bundle;
+    private LinearLayout viewProfile, viewReferrals, addReferrals, search, donation;
+    private EditText hey;
+    private good.force.teah.makeawish.ConnectionManager.Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
+        // Session manager
 
+        session = new good.force.teah.makeawish.ConnectionManager.Session(getApplicationContext());
         viewProfile = (LinearLayout) findViewById(R.id.button_profile);
         viewReferrals = (LinearLayout) findViewById(R.id.button_view_refferal);
         addReferrals = (LinearLayout) findViewById(R.id.button_add_refferal);
@@ -108,6 +111,11 @@ public class homescreen extends AppCompatActivity {
             }
             case R.id.menu_exit: {
                 //Kill the app
+                System.exit(0);
+                return true;
+            }
+            case R.id.menu_logout: {
+                session.setLogin(true);
                 System.exit(0);
                 return true;
             }

@@ -19,56 +19,54 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import android.content.Intent;
+
 public class ConsentForm extends AppCompatActivity {
-EditText parentName,  formExplainedBy, witness;
-CheckBox checkBox;
-boolean flag=false;
+    EditText parentName, formExplainedBy, witness;
+    CheckBox checkBox;
+    boolean flag = false;
     Button approve;
     private good.force.teah.makeawish.Data.DataHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consent_form);
 
-        parentName=(EditText)findViewById(R.id.editText);
-        formExplainedBy=(EditText)findViewById(R.id.editText2);
-        witness=(EditText)findViewById(R.id.editText3);
-        approve=(Button)findViewById(R.id.approveButton);
-        checkBox=(CheckBox)findViewById(R.id.checkBox);
+        parentName = (EditText) findViewById(R.id.editText);
+        formExplainedBy = (EditText) findViewById(R.id.editText2);
+        witness = (EditText) findViewById(R.id.editText3);
+        approve = (Button) findViewById(R.id.approveButton);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(flag==false)
-                {
+                if (flag == false) {
                     approve.setEnabled(true);
-                    flag=true;
-                }
-                else
-                {
+                    flag = true;
+                } else {
                     approve.setEnabled(false);
-                    flag=false;
+                    flag = false;
                 }
             }
         });
         approve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(parentName.getText().toString().length()==0 || formExplainedBy.getText().toString().length()==0 || witness.getText().toString().length()==0)
-                {
-                    Toast.makeText(getApplicationContext(),"Please enter all the values",Toast.LENGTH_LONG).show();
-                }
-                else
-                {
+                if (parentName.getText().toString().length() == 0 || formExplainedBy.getText().toString().length() == 0 || witness.getText().toString().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please enter all the values", Toast.LENGTH_LONG).show();
+                } else {
 //registerUser(parentName.getText().toString(),formExplainedBy.getText().toString(),witness.getText().toString());
 
-                    Intent intent= new Intent(ConsentForm.this, IdentifyWish.class);
+                    Intent intent = new Intent(ConsentForm.this, IdentifyWish.class);
                     startActivity(intent);
                 }
             }
         });
     }
-    private void registerUser(final String pName, final String expBy, final String witness){ // Tag used to cancel the request
+
+    private void registerUser(final String pName, final String expBy, final String witness) { // Tag used to cancel the request
         String tag_string_req = "req_register";
 
         StringRequest strReq = new StringRequest(Request.Method.POST,

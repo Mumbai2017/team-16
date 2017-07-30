@@ -20,37 +20,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IdentifyWish extends AppCompatActivity {
-EditText wish1,wish2, wish3;
+    EditText wish1, wish2, wish3;
     Button submit;
     private good.force.teah.makeawish.Data.DataHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_identify_wish);
 
-        wish1=(EditText) findViewById(R.id.wish1);
-        wish2=(EditText) findViewById(R.id.wish2);
-        wish3=(EditText) findViewById(R.id.wish3);
-        submit=(Button) findViewById(R.id.submit);
+        wish1 = (EditText) findViewById(R.id.wish1);
+        wish2 = (EditText) findViewById(R.id.wish2);
+        wish3 = (EditText) findViewById(R.id.wish3);
+        submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(wish1.getText().toString().length()==0 || wish2.getText().toString().length()==0 || wish3.getText().toString().length()==0 )
-                {
-                    Toast.makeText(getApplicationContext(),"Please enter all details",Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                   // registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
-                    Intent intent=new Intent(IdentifyWish.this, homescreen.class);
+                if (wish1.getText().toString().length() == 0 || wish2.getText().toString().length() == 0 || wish3.getText().toString().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please enter all details", Toast.LENGTH_LONG).show();
+                } else {
+                    // registerUser(wish1.getText().toString(),wish2.getText().toString(),wish3.getText().toString());
+                    Intent intent = new Intent(IdentifyWish.this, homescreen.class);
                     startActivity(intent);
-                    Toast.makeText(getApplicationContext(),"Wishes uploaded successfully",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Wishes uploaded successfully", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
-    private void registerUser(final String wish1, final String wish2, final String wish3){ // Tag used to cancel the request
+    private void registerUser(final String wish1, final String wish2, final String wish3) { // Tag used to cancel the request
         String tag_string_req = "req_register";
 
         StringRequest strReq = new StringRequest(Request.Method.POST,

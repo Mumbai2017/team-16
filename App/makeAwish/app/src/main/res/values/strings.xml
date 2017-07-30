@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">makeAwish</string>
+    <string name="app_name">make-A-wish</string>
     <string name="title_activity_login">Login</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_profile">profile</string>
-    <string name="title_activity_add_referral">addReferral</string>
+    <string name="hello_blank_fragment">Fragment template</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_add_referral">Add Referral</string>
 </resources>

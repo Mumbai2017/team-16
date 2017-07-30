@@ -4,80 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="good.force.teah.makeawish.ConsentForm"
+    android:layout_margin="20sp"
     android:orientation="vertical"
-    android:layout_margin="20sp">
+    tools:context="good.force.teah.makeawish.ConsentForm">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:padding="5sp"
-            android:textSize="19sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:text="A. Consent to access medical information" />
-        <TextView
             android:padding="5sp"
-            android:textSize="19sp"
+            android:text="A. Consent to access medical information"
+            android:textColor="@android:color/black"
+            android:textSize="19sp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:text="B. Consent to liability release" />
-        <TextView
             android:padding="5sp"
-            android:textSize="19sp"
+            android:text="B. Consent to liability release"
+            android:textColor="@android:color/black"
+            android:textSize="19sp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5sp"
+            android:text="C. Consent to disclosure/ publicity authorization"
             android:textColor="@android:color/black"
-            android:text="C. Consent to disclosure/ publicity authorization" />
+            android:textSize="19sp" />
 
     </LinearLayout>
 
     <CheckBox
-        android:layout_marginTop="15sp"
         android:id="@+id/checkBox"
-        android:textSize="13sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
         android:gravity="top"
-        android:text="We, the parent(s)/ legal guardian(s)of other minor participants, if any, and other adult participants, if any, acknowledge reading, understanding and agreeing to give our consent to condition mentioned." />
+        android:text="We, the parent(s)/ legal guardian(s)of other minor participants, if any, and other adult participants, if any, acknowledge reading, understanding and agreeing to give our consent to condition mentioned."
+        android:textSize="13sp" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Parent/ Guardian Name"
-        android:layout_marginTop="10sp"/>
+        android:inputType="textPersonName" />
 
 
     <EditText
-        android:layout_marginTop="10sp"
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Witness name" />
+        android:hint="Witness name"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:layout_marginTop="10sp"
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Volunteer Name" />
+        android:hint="Volunteer Name"
+        android:inputType="textPersonName" />
 
     <Button
-        android:layout_marginTop="20sp"
         android:id="@+id/approveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
         android:enabled="false"
         android:text="Approve" />
 </LinearLayout>

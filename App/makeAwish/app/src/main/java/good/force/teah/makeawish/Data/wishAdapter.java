@@ -3,6 +3,7 @@ package good.force.teah.makeawish.Data;
 /**
  * Created by Sarbjit on 30-07-2017.
  */
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,17 +21,16 @@ public class wishAdapter extends RecyclerView.Adapter<wishAdapter.MyViewHolder> 
     private List<wish> listData;
     private LayoutInflater inflater;
 
-    public wishAdapter(List<wish> listData, Context c)
-    {
-        this.inflater=LayoutInflater.from(c);
-        this.listData=listData;
+    public wishAdapter(List<wish> listData, Context c) {
+        this.inflater = LayoutInflater.from(c);
+        this.listData = listData;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view=inflater.inflate(R.layout.wish_list_row,parent,false);
+        View view = inflater.inflate(R.layout.wish_list_row, parent, false);
 
 
         return new MyViewHolder(view);
@@ -38,7 +38,7 @@ public class wishAdapter extends RecyclerView.Adapter<wishAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        wish item=listData.get(position);
+        wish item = listData.get(position);
         holder.title.setText(item.getName());
         holder.icon.setImageResource(item.getImageResId());
         holder.status.setText(item.getStatus());
@@ -51,23 +51,23 @@ public class wishAdapter extends RecyclerView.Adapter<wishAdapter.MyViewHolder> 
     }
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        private TextView title,status;
+        private TextView title, status;
         private ImageView icon;
         private View container;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            title=(TextView) itemView.findViewById(R.id.childName);
-            status=(TextView) itemView.findViewById(R.id.status);
-            icon=(ImageView) itemView.findViewById(R.id.im_item_icon);
-            container=itemView.findViewById(R.id.cont_item_root);
+            title = (TextView) itemView.findViewById(R.id.childName);
+            status = (TextView) itemView.findViewById(R.id.status);
+            icon = (ImageView) itemView.findViewById(R.id.im_item_icon);
+            container = itemView.findViewById(R.id.cont_item_root);
 
 
         }
     }
-    }
+}
 

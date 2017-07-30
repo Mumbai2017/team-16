@@ -34,25 +34,22 @@
         android:padding="10dp">
 
         <TextView
-            android:textSize="18dp"
             android:id="@+id/childName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingLeft="8dp"
-            android:text="Child name" />
+            android:text="Child name"
+            android:textSize="18dp" />
 
         <TextView
-            android:textSize="18dp"
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingLeft="8dp"
-            android:text="Status" />
-
-
-
+            android:text="Status"
+            android:textSize="18dp" />
 
     </LinearLayout>
 

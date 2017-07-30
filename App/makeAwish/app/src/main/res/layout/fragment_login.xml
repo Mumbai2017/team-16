@@ -1,10 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layout_login"
     tools:context="good.force.teah.makeawish.LoginFragment">
-
 
     <EditText
         android:id="@+id/email"
@@ -15,53 +14,44 @@
         android:inputType="textEmailAddress" />
 
     <Button
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:id="@+id/login"
         android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"/>
+        android:text="Log In" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:id="@+id/password"
-        android:hint="Password"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:hint="Password"
+        android:inputType="textPassword" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="User Login"
-        android:textSize="25dp"
-        android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="80dp"
+        android:text="User Login"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="-OR- "
-        android:id="@+id/textView5"
-        android:layout_marginBottom="10dp"
-        android:layout_centerHorizontal="true" />
     <Button
-        android:background="@null"
+        android:id="@+id/btn_signUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don&apos;t have an account? Sign up."
-        android:id="@+id/btn_signUp"
-        android:textAlignment="center"
-        android:textSize="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:text="Don&apos;t have an account? Sign up."
+        android:textAlignment="center"
+        android:textSize="20dp" />
 
 </RelativeLayout>

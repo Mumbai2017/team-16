@@ -13,31 +13,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Login extends AppCompatActivity implements LoginFragment.OnFragmentInteractionListener, SignUpFragment.OnFragmentInteractionListener{
+public class Login extends AppCompatActivity implements LoginFragment.OnFragmentInteractionListener, SignUpFragment.OnFragmentInteractionListener {
 
     String fragment_change;
     Fragment fragment = null;
     Class fragmentClass;
 
-    int flag=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Bundle bundle = getIntent().getExtras();
 
 
         fragment_change = bundle.getString("strName");
-        Log.d("Fragment opening",fragment_change);
-        if(fragment_change.equalsIgnoreCase("Login"))
-        {
+        Log.d("Fragment opening", fragment_change);
+        if (fragment_change.equalsIgnoreCase("Login")) {
             fragmentClass = LoginFragment.class;
-           // fragment_change.setText("Already have an account? Log In.");
-           // flag=0;
+            // fragment_change.setText("Already have an account? Log In.");
+            // flag=0;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();
             } catch (InstantiationException e) {
@@ -47,9 +45,7 @@ public class Login extends AppCompatActivity implements LoginFragment.OnFragment
             }
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.frameLayout, fragment).commit();
-        }
-        else
-        {
+        } else {
             fragmentClass = SignUpFragment.class;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();

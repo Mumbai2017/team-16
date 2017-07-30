@@ -50,7 +50,7 @@ public class SignUpFragment extends Fragment {
     private CheckBox dcotor,volunteer,donor;
 
     private OnFragmentInteractionListener mListener;
-    Button signup;
+    private Button signup;
     private good.force.teah.makeawish.Data.DataHandler db;
     int doc, vol, don;
     public SignUpFragment() {

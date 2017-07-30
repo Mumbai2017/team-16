@@ -32,7 +32,7 @@ import static java.security.AccessController.getContext;
 
 public class viewReferral extends AppCompatActivity {
 
-    private static final String TAG ="Referal" ;
+    private static final String TAG = "Referal";
     private List<wish> wishList = new ArrayList<>();
     private RecyclerView recView;
     private wishAdapter mAdapter;
@@ -41,40 +41,40 @@ public class viewReferral extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_referral);
-      //  Intent intent = getIntent();
+        //  Intent intent = getIntent();
 //Toast.makeText(getApplicationContext(),"recycler view",Toast.LENGTH_LONG).show();
         recView = (RecyclerView) findViewById(R.id.recycler_view);
-        mAdapter = new wishAdapter(wishList,viewReferral.this);
+        mAdapter = new wishAdapter(wishList, viewReferral.this);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
 
         recView.setLayoutManager(new LinearLayoutManager(this));
 
-        mAdapter=new wishAdapter(WishData.getListData(),this);
+        mAdapter = new wishAdapter(WishData.getListData(), this);
         recView.setAdapter(mAdapter);
     }
 
-    private List<wish> getListData(){
+    private List<wish> getListData() {
         final List<wish> data = new ArrayList<>();
         final String tag_string_req = "request_referrals";
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 good.force.teah.makeawish.Config.config.URL_REGISTER,
                 new Response.Listener<String>() {
 
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jObj = new JSONObject(response);
-                    JSONArray jArray = jObj.getJSONArray("data");
-                    for(int i=0;i<jArray.length();i++){
-                        JSONObject tmp = jArray.getJSONObject(i);
-                        data.add(new wish(tmp.getString("name"),tmp.getString("status")));
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jObj = new JSONObject(response);
+                            JSONArray jArray = jObj.getJSONArray("data");
+                            for (int i = 0; i < jArray.length(); i++) {
+                                JSONObject tmp = jArray.getJSONObject(i);
+                                data.add(new wish(tmp.getString("name"), tmp.getString("status")));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
 
-            }
-        }, new Response.ErrorListener() {
+                    }
+                }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -123,9 +123,9 @@ public class viewReferral extends AppCompatActivity {
 
                     String uid = jObj.getString("aadhar_id");
                     String username = jObj.getString("username");
-                    Log.d("response",uid);
-                    Intent intent = new Intent(viewReferral.this,homescreen.class);
-                    intent.putExtra("uid", uid );
+                    Log.d("response", uid);
+                    Intent intent = new Intent(viewReferral.this, homescreen.class);
+                    intent.putExtra("uid", uid);
                     viewReferral.this.startActivity(intent);
                 } catch (JSONException e) {
                     // JSON error
