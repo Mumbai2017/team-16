@@ -36,8 +36,8 @@ Bundle bundle;
         search = (LinearLayout)findViewById(R.id.button_faq);
         donation= (LinearLayout)findViewById(R.id.button_calender);
 
-        String uid= bundle.getString("uid");
-
+       // String uid= bundle.getString("uid");
+String uid="2343";
         viewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +98,9 @@ Bundle bundle;
                 System.exit(0);
                 return true;
             case R.id.menu_volunteer:
-
+                Intent intent = new Intent(homescreen.this, ConsentForm.class);
+                intent.putExtra("uid","uid");
+                startActivity(intent);
             default:
                 return super.onOptionsItemSelected(item);
         }
