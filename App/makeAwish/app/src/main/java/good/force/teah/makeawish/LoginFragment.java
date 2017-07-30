@@ -50,7 +50,7 @@ public class LoginFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static final String TAG ="Login" ;
+    private static final String TAG = "Login";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,7 +58,7 @@ public class LoginFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private good.force.teah.makeawish.ConnectionManager.Session session;
-    private EditText emailField,passwordField;
+    private EditText emailField, passwordField;
     private Button buttonLogin;
     private Button btn_signUp;
     private TextView resetPassword;
@@ -100,11 +100,11 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        final View view=inflater.inflate(R.layout.fragment_login, container, false);
-        emailField=(EditText)view.findViewById(R.id.email);
-        passwordField=(EditText)view.findViewById(R.id.password);
-        buttonLogin=(Button)view.findViewById(R.id.login);
-     //   resetPassword=(TextView)view.findViewById(R.id.password_reset);
+        final View view = inflater.inflate(R.layout.fragment_login, container, false);
+        emailField = (EditText) view.findViewById(R.id.email);
+        passwordField = (EditText) view.findViewById(R.id.password);
+        buttonLogin = (Button) view.findViewById(R.id.login);
+        //   resetPassword=(TextView)view.findViewById(R.id.password_reset);
         // Progress dialog
         pDialog = new ProgressDialog(getContext());
         pDialog.setCancelable(false);
@@ -146,9 +146,9 @@ public class LoginFragment extends Fragment {
                 startActivity(intent);
                 getActivity().getFragmentManager().popBackStack();*/
 
-                String keyIdentifer  = "SignUp";
+                String keyIdentifer = "SignUp";
                 Intent i = new Intent(getContext(), Login.class);
-                i.putExtra("strName", keyIdentifer );
+                i.putExtra("strName", keyIdentifer);
                 startActivity(i);
             }
         });
@@ -203,15 +203,15 @@ public class LoginFragment extends Fragment {
 
                     // Check for error node in json
                     //if (!error) {
-                        // user successfully logged in
-                        // Create login session
-                        //session.setLogin(true);
+                    // user successfully logged in
+                    // Create login session
+                    //session.setLogin(true);
 
-                        // Now store the user in SQLite
+                    // Now store the user in SQLite
 
-                       String uid = jObj.getString("aadhar_id");
-                       String username = jObj.getString("username");
-                       Log.d("response",uid);
+                    String uid = jObj.getString("aadhar_id");
+                    String username = jObj.getString("username");
+                    Log.d("response", uid);
 
                       /*  JSONObject user = jObj.getJSONObject("username");
                         String name = user.getString("doctor");
@@ -219,12 +219,12 @@ public class LoginFragment extends Fragment {
                         String created_at = user
                                 .getString("donor"); */
 
-                        // Inserting row in users table
-                     //   db.addUser(name, email, uid, created_at);
-                    Intent intent = new Intent(getContext(),homescreen.class);
-                    intent.putExtra("uid", uid );
-                        LoginFragment.this.startActivity(intent);
-                        //getActivity().getFragmentManager().popBackStack();
+                    // Inserting row in users table
+                    //   db.addUser(name, email, uid, created_at);
+                    Intent intent = new Intent(getContext(), homescreen.class);
+                    intent.putExtra("uid", uid);
+                    LoginFragment.this.startActivity(intent);
+                    //getActivity().getFragmentManager().popBackStack();
                    /* } else {
                         // Error in login. Get the error message
                         String errorMsg = jObj.getString("error_msg");
@@ -292,6 +292,6 @@ public class LoginFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         public void onLoginFragmentInteraction(String string);
 
-       //void onFragmentInteraction(Uri uri);
+        //void onFragmentInteraction(Uri uri);
     }
 }

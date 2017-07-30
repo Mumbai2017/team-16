@@ -1,3 +1,4 @@
+/** dummy data to feed to the listAdapter*/
 package good.force.teah.makeawish.Data;
 
 import java.util.ArrayList;
@@ -7,8 +8,6 @@ public class WishData {
     private static final String[] names={"swarali","akshu","gauri"};
     private static final String[] status={"pending","approved","granted"};
     private static final int[] icons={android.R.drawable.ic_popup_reminder,android.R.drawable.ic_menu_edit,android.R.drawable.ic_menu_delete};
-
-
 
 
     public static List<wish> getListData()

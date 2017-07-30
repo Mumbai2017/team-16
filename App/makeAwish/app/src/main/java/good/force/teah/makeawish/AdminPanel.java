@@ -15,7 +15,8 @@ public class AdminPanel extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.web_adminPanel);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("http://");
-        setContentView(webView);
+        // TODO Connect to the admin panel @ server
+        //webView.loadUrl("http://");
+        //setContentView(webView);
     }
 }

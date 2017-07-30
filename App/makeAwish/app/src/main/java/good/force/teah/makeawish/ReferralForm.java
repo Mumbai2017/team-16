@@ -26,35 +26,36 @@ public class ReferralForm extends AppCompatActivity {
     private EditText caseNo, hospitalName, adhaar, mothertongue, fname, mname, gname, education, siblings, illness, notes;
     private good.force.teah.makeawish.Data.DataHandler db;
     Button refer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_referral_form);
-        caseNo=(EditText)findViewById(R.id.caseNo);
-        hospitalName=(EditText)findViewById(R.id.hospName);
-        adhaar=(EditText)findViewById(R.id.adhaarNo);
-        mothertongue=(EditText)findViewById(R.id.mptherTongue);
-        fname=(EditText) findViewById(R.id.fName);
-        mname=(EditText) findViewById(R.id.mName);
-        gname=(EditText) findViewById(R.id.gName);
-        education=(EditText) findViewById(R.id.education);
-        siblings=(EditText) findViewById(R.id.siblings);
-        illness=(EditText) findViewById(R.id.illness);
-        notes=(EditText) findViewById(R.id.notes);
-        refer=(Button) findViewById(R.id.refer);
+        caseNo = (EditText) findViewById(R.id.caseNo);
+        hospitalName = (EditText) findViewById(R.id.hospName);
+        adhaar = (EditText) findViewById(R.id.adhaarNo);
+        mothertongue = (EditText) findViewById(R.id.mptherTongue);
+        fname = (EditText) findViewById(R.id.fName);
+        mname = (EditText) findViewById(R.id.mName);
+        gname = (EditText) findViewById(R.id.gName);
+        education = (EditText) findViewById(R.id.education);
+        siblings = (EditText) findViewById(R.id.siblings);
+        illness = (EditText) findViewById(R.id.illness);
+        notes = (EditText) findViewById(R.id.notes);
+        refer = (Button) findViewById(R.id.refer);
         refer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser(
-                        caseNo.getText().toString(), hospitalName.getText().toString(),adhaar.getText().toString(), mothertongue.getText().toString(),
+                        caseNo.getText().toString(), hospitalName.getText().toString(), adhaar.getText().toString(), mothertongue.getText().toString(),
                         fname.getText().toString(), mname.getText().toString(), gname.getText().toString(), education.getText().toString(),
-                        siblings.getText().toString(), illness.getText().toString(),notes.getText().toString()
+                        siblings.getText().toString(), illness.getText().toString(), notes.getText().toString()
                 );
             }
         });
     }
 
-    private void registerUser(final String caseNo, final String hospital,final  String adhaar,final  String mtongue, final String fname,final  String mname, final String gname,final  String edu, final String siblings,final  String illness, final String notes) {
+    private void registerUser(final String caseNo, final String hospital, final String adhaar, final String mtongue, final String fname, final String mname, final String gname, final String edu, final String siblings, final String illness, final String notes) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
@@ -89,13 +90,9 @@ public class ReferralForm extends AppCompatActivity {
                 params.put("siblings", siblings);
                 params.put("illness", illness);
                 params.put("notes", notes);
-
-
                 return params;
             }
-
         };
-
         // Adding request to request queue
         App.getInstance().addToRequestQueue(strReq, tag_string_req);
     }

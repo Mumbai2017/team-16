@@ -14,14 +14,9 @@ public class Session {
 
     // Shared Preferences
     SharedPreferences pref;
-
     SharedPreferences.Editor editor;
     Context _context;
-
-    // Shared pref mode
     int PRIVATE_MODE = 0;
-
-    // Shared preferences file name
     private static final String PREF_NAME = "Login";
 
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
@@ -41,8 +36,7 @@ public class Session {
 
         Log.d(TAG, "User login session modified!");
     }
-
-    public boolean isLoggedIn(){
+    public boolean isLoggedIn() {
         return pref.getBoolean(KEY_IS_LOGGEDIN, false);
     }
 }

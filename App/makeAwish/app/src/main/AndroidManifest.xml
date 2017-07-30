@@ -31,15 +31,16 @@
         <activity android:name=".homescreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".anonDonor"></activity>
         <activity android:name=".addReferral" />
         <activity android:name=".profile" />
-        <activity android:name=".VolunteerHomeScreen"></activity>
-        <activity android:name=".IdentifyWish"></activity>
+        <activity android:name=".VolunteerHomeScreen" />
+        <activity android:name=".IdentifyWish" />
+        <activity android:name=".viewReferral" />
+        <activity android:name=".AdminPanel" />
     </application>
 
 </manifest>
